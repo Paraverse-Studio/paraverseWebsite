@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Apps</title>
+        <%- include('./partials/_head.ejs') %>
+    </head>
+    <body>
+        <!-- TOP NAVIGATION BAR -->
+        <%- include('./partials/_navigation-bar.ejs') %>
+        <br><br><br><br><br>
+        <!-- HEADER -->
+        <div class="welcome">
+            <h2>Paraverse Studio is an indie developer studio</h2>
+            <section>We want to develop apps that solve problems</section><br>
+            <hr class="welcome">
+            <div class="transition-heading" id="transition-head"><strong>Our apps</strong></div>
+        </div>
+        <!-- MAIN CONTENT -->
+        <div class="container">
+            <!-- easybillr -->
+            <div class="content" id="easybillr">
+                <section class="video">
+                    <iframe width="444" height="250" src="https://www.youtube.com/embed/JPQQxC0Cs2o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </section>
+                <section class="text"><h2>EasyBillr</h2><br>
+                    <strong>EasyBillr</strong> is an Application available for free on the Google PlayStore. EasyBillr is designed to ease down your billing burden and help you manage the activity history of all of your bills
+                    <hr>
+                        Available on the Google PlayStore
+                </section>
+            </div>
+            <!-- easyviewr -->
+            <div class="content" id="easyviewr">
+                <section class="video">
+                    <iframe width="444" height="250" src="https://www.youtube.com/embed/S2mFpJxAI38" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </section>
+                <section class="text">
+                    <h2>EasyViewr</h2><br>
+                    <strong>EasyViewr</strong> is an online platform designed to ease the scheduling burden. It allows managers to create an auto-populating Master Schedule, view, edit or even remove employees, as well as add/remove announcements for all employees to see. On the other side, the employees gain the benefit of ensuring they know when their shifts are and no-shows, late arrivals, and confusion of shifts are all drastically reduced with the use of EasyViewr
+                    <hr>
+                    <div class="links">
+                        <a class="website" href="http://easyviewr.com/">Website</a>
+                    </div>
+                </section>
+            </div>
+            <!-- TRANSITION -->
+            <div class="transition-heading">
+                <strong>Try our web apps below</strong>
+            </div>
+        </div>
+        <!-- FOOTER -->
+        <%- include('./partials/_footer.ejs') %>
+    </body>
+    </html>
