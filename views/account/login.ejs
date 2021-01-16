@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Paraverse - <%= title %></title>
-        <%- include('../partials/_head.ejs') %>
-    </head>
+  <head>
+    <title>Paraverse - <%= title %></title>
+    <%- include('../partials/_head.ejs') %>
+  </head>
 
-    <body>
-        <!-- TOP NAVIGATION BAR -->
-        <%- include('../partials/_navbar.ejs') %>
-        <br><br><br><br><br>
-        <!-- HEADER -->
-        <div class="welcome">
-            <h2>Login</h2>
-            <section>Access all your account and profile details here.</section><br>
-            <hr class="welcome"><br>
-        </div>
-        <!-- FOOTER  -->
-        <%- include('../partials/_footer.ejs') %>
-        
-    </body>
-    </html>
+  <body>
+    <!-- TOP NAVIGATION BAR -->
+    <%- include('../partials/_navbar.ejs') %>
+    <br><br><br><br><br>
+    <!-- HEADER -->
+    <hr class="welcome"><br>
+    <section class="login-section">
+      <h2 class="page-header">Login</h2>
+      <form class="login-form" method="POST">
+        <ul class="errors">
+          <% errors.forEach(error => { %>
+            <li class="error"><%= error %></li>
+          <% })%>
+        </ul>
+        <label for="username" name="username">Username</label>
+        <input type="text" id="username" placeholder="username" />
+        <label for="password" name="password">Password</label>
+        <input type="password" id="password" placeholder="password" />
+        <button type="submit">Login</button>
+      </form>
+    </section>
+    <!-- FOOTER  -->
+    <%- include('../partials/_footer.ejs') %>
+
+  </body>
+</html>

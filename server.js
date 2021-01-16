@@ -24,8 +24,8 @@ mongoose.connect(
 // Middleware
 app.set('view engine', 'ejs'); // sets view engine to ejs
 app.use(express.static('public')); // sets the public folder as static (keep all js, imgs, styling in public folder)
-app.use(express.urlencoded({ extended: true })); // allows us to use 'req.body' to request data posted by user
 app.use(express.json()); // allows us to parse json data
+app.use(express.urlencoded({ extended: true })); // allows us to use 'req.body' to request data posted by user
 
 //routes
 app.get('/', (req, res) => {

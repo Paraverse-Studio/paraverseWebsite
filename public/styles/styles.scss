@@ -4,7 +4,12 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 button {
+  font-family: 'Roboto', sans-serif;
   font-size: 1rem;
 }
 
@@ -15,6 +20,19 @@ button {
   --navHeight: 80px;
   --borderRadius: 8px;
   --smallBtnPadding: 10px;
+  --smallFont: 0.8rem;
+  --regularFont: 1rem;
+  --mediumFont: 1.2rem;
+  --largeFont: 1.5rem;
+  --hugeFont: 2rem;
+}
+
+.page-header {
+  font-size: var(--largeFont);
+}
+
+.error {
+  color: red;
 }
 
 @import 'Navbar';

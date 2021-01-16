@@ -5,7 +5,12 @@
           box-sizing: border-box;
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 button {
+  font-family: 'Roboto', sans-serif;
   font-size: 1rem;
 }
 
@@ -16,6 +21,19 @@ button {
   --navHeight: 80px;
   --borderRadius: 8px;
   --smallBtnPadding: 10px;
+  --smallFont: 0.8rem;
+  --regularFont: 1rem;
+  --mediumFont: 1.2rem;
+  --largeFont: 1.5rem;
+  --hugeFont: 2rem;
+}
+
+.page-header {
+  font-size: var(--largeFont);
+}
+
+.error {
+  color: red;
 }
 
 nav {
@@ -74,6 +92,57 @@ nav {
   padding: var(--smallBtnPadding);
   text-align: center;
   text-decoration: none;
+  cursor: pointer;
+}
+
+.login-section {
+  margin: auto;
+  text-align: center;
+}
+
+form.login-form {
+  max-width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 20px auto;
+  padding: 50px;
+  border: 2px solid var(--primaryColor);
+}
+
+form.login-form label {
+  margin: 20px 0 10px 0;
+  font-size: var(--mediumFont);
+}
+
+form.login-form input {
+  border: 0;
+  outline: 0;
+  padding: 10px;
+  border-bottom: 1px solid var(--primaryColor);
+  background-color: #eee;
+  cursor: pointer;
+}
+
+form.login-form input[type='text'],
+form.login-form input[type='password'],
+form.login-form input[type='placeholder'] {
+  font-size: 1rem;
+}
+
+form.login-form input:hover,
+form.login-form input:focus {
+  border-bottom: 2px solid var(--primaryColor);
+  opacity: 0.8;
+}
+
+form.login-form button {
+  margin-top: 40px;
+  padding: var(--smallBtnPadding);
   cursor: pointer;
 }
 /*# sourceMappingURL=styles.css.map */

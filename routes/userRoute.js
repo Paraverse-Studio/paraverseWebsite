@@ -5,11 +5,13 @@ const bcrypt = require('bcrypt'); // required to 'hash' user 'passwords' for 'us
 const jwt = require('jsonwebtoken'); // required to 'authorize' user to 'private routes'
 
 router.get('/account/register', (req, res) => {
-  res.render('../views/account/register', { title: 'Register' });
+  errors = [];
+  res.render('../views/account/register', { title: 'Register', errors });
 });
 
 router.get('/account/login', (req, res) => {
-  res.render('../views/account/login', { title: 'Login' });
+  errors = [];
+  res.render('../views/account/login', { title: 'Login', errors });
 });
 
 router.get('/account', (req, res) => {
@@ -27,6 +29,7 @@ router.post('/account/register', async (req, res) => {
     confirmPassword,
   } = req.body;
 
+  console.log(req.body);
   let errors = [];
 
   // validate user registration information
@@ -56,7 +59,7 @@ router.post('/account/register', async (req, res) => {
   // return out if there are any errors with validation
   if (errors.length > 0) {
     console.log('errors');
-    return res.render('../views/account/register.ejs', {
+    return res.render('../views/account/register', {
       title: 'Register',
       errors,
     });
@@ -86,22 +89,30 @@ router.post('/account/login', async (req, res) => {
   // 'login information' entered by user which we can 'request' from the 'body'
   const { username, password } = req.body;
 
+  let errors = [];
+
+  console.log(username);
+  console.log(password);
   // validate login form
   // check if all fields have been filled
-  if (!username || !password)
-    return res.status(400).json({ msg: 'Not all fields have been entered' }); // if either username or password is null, response with a status of 400 and return a msg
+  if (username == null || password == null)
+    errors.push('Not all fields have been entered'); // if either username or password is null, response with a status of 400 and return a msg
 
   // find the 'user' in Mongo DB by comparing username details
   const user = await User.findOne({ username: username });
-  if (!user)
-    return res
-      .status(400)
-      .json({ msg: 'No account with this username has been registered' });
+  if (!user) errors.push('No account with this username has been registered');
 
   // compare user entered 'password' with the 'hashed password' in Mongo DB
   const isMatch = await bcrypt.compare(password, user.password);
-  if (!isMatch) return res.status(400).json({ msg: 'Invalid credentials' });
+  if (!isMatch) errors.push('Invalid credentials');
 
+  if (errors.length > 0) {
+    console.log('errors');
+    return res.render('../views/account/login', {
+      title: 'Login',
+      errors: errors,
+    });
+  }
   // sign an access token for user identification
   const accessToken = jwt.sign(
     { id: user._id },
