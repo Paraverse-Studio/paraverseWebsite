@@ -14,24 +14,24 @@
     <section class="login-section">
       <h2 class="page-header">Register</h2>
       <form class="login-form" method="POST" action="/account/register">
-        <ul class="errors">
+        <div class="errors">
           <% errors.forEach(error => { %>
-            <li class="error"><%= error %></li>
+            <div><li><%= error %></li><button onClick="hideError" id="hideErrorButton">X</button></div>
           <% })%>
-        </ul>
-        <label for="firstName" name="firstName">First Name</label>
-        <input type="text" id="firstName" placeholder="First Name" />
-        <label for="lastName" name="lastName">Last Name</label>
-        <input type="text" id="lastName" placeholder="Last Name" />
-        <label for="email" name="email">Email</label>
-        <input type="email" id="email" placeholder="Email" />
-        <label for="username" name="username">Username</label>
-        <input type="text" id="username" placeholder="Username" />
-        <label for="password" name="password">Password</label>
-        <input type="password" id="password" placeholder="Password" />
-        <label for="confirmPassword" name="confirmPassword">Confirm Password</label>
-        <input type="password" id="confirmPassword" placeholder="Confirm Password" />
-        <button type="submit">Login</button>
+          </div>
+        <label for="firstName">First Name</label>
+        <input type="text" name="firstName" id="firstName" placeholder="First Name" />
+        <label for="lastName">Last Name</label>
+        <input type="text" name="lastName" id="lastName" placeholder="Last Name" />
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="Email" />
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" placeholder="Username" />
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Password" />
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" />
+        <button type="submit">Register</button>
       </form>
     </section>
     <!-- FOOTER  -->

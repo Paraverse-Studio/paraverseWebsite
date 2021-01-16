@@ -32,10 +32,6 @@ button {
   font-size: var(--largeFont);
 }
 
-.error {
-  color: red;
-}
-
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -144,5 +140,50 @@ form.login-form button {
   margin-top: 40px;
   padding: var(--smallBtnPadding);
   cursor: pointer;
+}
+
+.errors {
+  list-style: none;
+  padding: 10px;
+}
+
+.errors div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 5px 0;
+  background-color: lightcoral;
+  padding: 5px;
+  border-radius: var(--borderRadius);
+}
+
+.errors div li {
+  width: 350px;
+  text-align: left;
+}
+
+.errors div button {
+  outline: 0;
+  border: 0;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: red;
+  border-radius: 50%;
+  -ms-flex-line-pack: right;
+      align-content: right;
+}
+
+.errors .hide {
+  display: none;
 }
 /*# sourceMappingURL=styles.css.map */

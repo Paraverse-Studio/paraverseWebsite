@@ -51,4 +51,4 @@ app.get('/privacy', (req, res) => {
 });
 
 // This runs all account routes found in the 'routes/userRoute.js' file
-app.use('/', userRoute);
+app.use('/account', userRoute);

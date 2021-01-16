@@ -13,16 +13,16 @@
     <hr class="welcome"><br>
     <section class="login-section">
       <h2 class="page-header">Login</h2>
-      <form class="login-form" method="POST">
+      <form class="login-form" method="POST" action="/account/login">
         <ul class="errors">
           <% errors.forEach(error => { %>
-            <li class="error"><%= error %></li>
+            <div><li><%= error %></li><button onClick="hideError" id="hideErrorButton">X</button></div>
           <% })%>
         </ul>
-        <label for="username" name="username">Username</label>
-        <input type="text" id="username" placeholder="username" />
-        <label for="password" name="password">Password</label>
-        <input type="password" id="password" placeholder="password" />
+        <label for="username" >Username</label>
+        <input type="text" name="username" id="username" placeholder="username" />
+        <label for="password" >Password</label>
+        <input type="password" name="password" id="password" placeholder="password" />
         <button type="submit">Login</button>
       </form>
     </section>

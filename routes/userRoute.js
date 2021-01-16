@@ -4,21 +4,21 @@ const User = require('../models/userSchema');
 const bcrypt = require('bcrypt'); // required to 'hash' user 'passwords' for 'user security'
 const jwt = require('jsonwebtoken'); // required to 'authorize' user to 'private routes'
 
-router.get('/account/register', (req, res) => {
+router.get('/register', (req, res) => {
   errors = [];
   res.render('../views/account/register', { title: 'Register', errors });
 });
 
-router.get('/account/login', (req, res) => {
+router.get('/login', (req, res) => {
   errors = [];
   res.render('../views/account/login', { title: 'Login', errors });
 });
 
-router.get('/account', (req, res) => {
+router.get('/', (req, res) => {
   res.render('../views/account/account', { title: 'Account' });
 });
 
-router.post('/account/register', async (req, res) => {
+router.post('/register', async (req, res) => {
   // 'registration information' entered by user which we can 'request' from the 'body'
   const {
     firstName,
@@ -51,7 +51,7 @@ router.post('/account/register', async (req, res) => {
   if (password.search(/[0-9]/) < 0)
     errors.push('Password must contain at least one digit');
   if (password !== confirmPassword) errors.push('Passwords do not match');
-  if (password === username || password === firstName || password || lastName)
+  if (password === username || password === firstName || password === lastName)
     errors.push(
       'Password can not match your first name, last name or username'
     );
@@ -84,7 +84,7 @@ router.post('/account/register', async (req, res) => {
   return res.redirect('/account/login');
 });
 
-router.post('/account/login', async (req, res) => {
+router.post('/login', async (req, res) => {
   // get username and password value
   // 'login information' entered by user which we can 'request' from the 'body'
   const { username, password } = req.body;
@@ -102,17 +102,24 @@ router.post('/account/login', async (req, res) => {
   const user = await User.findOne({ username: username });
   if (!user) errors.push('No account with this username has been registered');
 
-  // compare user entered 'password' with the 'hashed password' in Mongo DB
-  const isMatch = await bcrypt.compare(password, user.password);
-  if (!isMatch) errors.push('Invalid credentials');
-
   if (errors.length > 0) {
     console.log('errors');
     return res.render('../views/account/login', {
       title: 'Login',
-      errors: errors,
+      errors,
     });
   }
+
+  // compare user entered 'password' with the 'hashed password' in Mongo DB
+  const isMatch = await bcrypt.compare(user.password, password);
+  if (!isMatch) {
+    errors.push('Invalid credentials');
+    return res.render('../views/account/login', {
+      title: 'Login',
+      errors,
+    });
+  }
+
   // sign an access token for user identification
   const accessToken = jwt.sign(
     { id: user._id },
