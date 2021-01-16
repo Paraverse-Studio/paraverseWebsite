@@ -14,11 +14,11 @@
     <section class="login-section">
       <h2 class="page-header">Login</h2>
       <form class="login-form" method="POST" action="/account/login">
-        <ul class="errors">
+        <div class="errors">
           <% errors.forEach(error => { %>
             <div><li><%= error %></li><button onClick="hideError" id="hideErrorButton">X</button></div>
           <% })%>
-        </ul>
+          </div>
         <label for="username" >Username</label>
         <input type="text" name="username" id="username" placeholder="username" />
         <label for="password" >Password</label>
