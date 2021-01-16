@@ -1,26 +1,4 @@
-* {
-  padding: 0;
-  margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-button {
-  font-size: 1rem;
-}
-
-:root {
-  --primaryColor: black;
-  --secondaryColor: white;
-  --complementaryColor: grey;
-  --navHeight: 80px;
-  --borderRadius: 8px;
-  --smallBtnPadding: 10px;
-}
-
 nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   height: var(--navHeight);
   padding: 5px;
@@ -28,19 +6,14 @@ nav {
 
 .nav-links {
   width: 60%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   height: var(--navHeight);
   margin: auto;
   list-style: none;
 }
 
 .nav-links li {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin: auto 0;
 }
@@ -58,8 +31,6 @@ nav {
 
 .account-links {
   width: 10%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   height: var(--navHeight);
   margin: auto 0;
@@ -76,4 +47,3 @@ nav {
   text-decoration: none;
   cursor: pointer;
 }
-/*# sourceMappingURL=styles.css.map */
