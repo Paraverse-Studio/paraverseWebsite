@@ -36,10 +36,8 @@ const registrationValidation = (req, res, next) => {
   // return out if there are any errors with validation
   if (errors.length > 0) {
     console.log('errors');
-    return res.render('../views/account/register', {
-      title: 'Register',
-      errors,
-    });
+    req.flash('error_msg', errors);
+    return res.redirect('/account/register');
   }
   next();
 };

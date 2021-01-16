@@ -1,7 +1,8 @@
 // ################### THIS FILE CONTAINS ALL THE USER ACCOUNT ROUTES ###################//
 const router = require('express').Router();
-const User = require('../models/userSchema');
 const bcrypt = require('bcrypt'); // required to 'hash' user 'passwords' for 'user security'
+const passport = require('passport');
+const User = require('../models/userSchema');
 const jwt = require('jsonwebtoken'); // required to 'authorize' user to 'private routes'
 const { registrationValidation } = require('../config/userValidation');
 
@@ -19,11 +20,54 @@ router.get('/', (req, res) => {
   res.render('../views/account/account', { title: 'Account' });
 });
 
-router.post('/register', registrationValidation, async (req, res) => {
+router.post('/register', async (req, res) => {
   // 'registration information' entered by user which we can 'request' from the 'body'
-  const { firstName, lastName, email, username, password } = req.body;
+  let errors = [];
+
+  const {
+    firstName,
+    lastName,
+    email,
+    username,
+    password,
+    confirmPassword,
+  } = req.body;
 
   // validate user registration information
+  if (
+    !firstName ||
+    !lastName ||
+    !email ||
+    !username ||
+    !password ||
+    !confirmPassword
+  )
+    errors.push('Not all fields have been entered');
+  if (username.length <= 5)
+    errors.push('Username must contain at least 6 characters');
+  if (password.length <= 7)
+    errors.push('Password must contain at least 8 characters');
+  if (password.search(/[a-z]/i) < 0)
+    errors.push('Password must contain at least one letter');
+  if (password.search(/[0-9]/) < 0)
+    errors.push('Password must contain at least one digit');
+  if (password !== confirmPassword) errors.push('Passwords do not match');
+  if (password === username || password === firstName || password === lastName)
+    errors.push(
+      'Password can not match your first name, last name or username'
+    );
+
+  const usernameExists = await User.findOne({ username });
+  if (usernameExists)
+    errors.push('Email already exists, use a different email');
+
+  // return out if there are any errors with validation
+  if (errors.length > 0) {
+    return res.render('../views/account/register', {
+      title: 'Register',
+      errors,
+    });
+  }
 
   // hash password for user security
   const hashedPassword = await bcrypt.hash(password, 10);
@@ -40,47 +84,16 @@ router.post('/register', registrationValidation, async (req, res) => {
   // save user into Mongo DB
   const savedUser = await user.save();
   // redirect user to login page
-  return res.redirect('/account/login');
+  req.flash('success_msg', 'You are now registered and can log in');
+  res.redirect('/account/login');
 });
 
-router.post('/login', async (req, res) => {
-  // get username and password value
-  // 'login information' entered by user which we can 'request' from the 'body'
-  const { username, password } = req.body;
-  let errors = [];
-
-  // validate login form
-  // check if all fields have been filled
-  if (!username || !password) errors.push('Not all fields have been entered'); // if either username or password is null, response with a status of 400 and return a msg
-
-  // find the 'user' in Mongo DB by comparing username details
-  const user = await User.findOne({ username: username });
-  if (!user) errors.push('No account with this username has been registered');
-
-  if (errors.length > 0) {
-    console.log('errors');
-    return res.render('../views/account/login', {
-      title: 'Login',
-      errors,
-    });
-  }
-  // compare user entered 'password' with the 'hashed password' in Mongo DB
-  const isMatch = await bcrypt.compare(password, user.password);
-  if (!isMatch) {
-    errors.push('Invalid credentials');
-    return res.render('../views/account/login', {
-      title: 'Login',
-      errors,
-    });
-  }
-
-  // sign an access token for user identification
-  const accessToken = jwt.sign(
-    { id: user._id },
-    process.env.ACCESS_TOKEN_SECRET
-  );
-  // redirect user to account page with the following json data
-  res.redirect('/account');
+router.post('/login', (req, res, next) => {
+  passport.authenticate('local', {
+    successRedirect: '/account',
+    failureRedirect: '/account/login',
+    failureFlash: true,
+  })(req, res, next);
 });
 
 module.exports = router;

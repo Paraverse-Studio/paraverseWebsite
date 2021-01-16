@@ -2,7 +2,7 @@
 // Will describe how to store the user account data in Mongo DB
 const mongoose = require('mongoose');
 
-const userSchema = mongoose.Schema({
+const UserSchema = mongoose.Schema({
   firstName: {
     type: String,
     required: true,
@@ -25,4 +25,6 @@ const userSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('User', userSchema);
+const User = mongoose.model('User', UserSchema);
+
+module.exports = User;

@@ -14,11 +14,7 @@
     <section class="login-section">
       <h2 class="page-header">Register</h2>
       <form class="login-form" method="POST" action="/account/register">
-        <div class="errors">
-          <% errors.forEach(error => { %>
-            <div><li><%= error %></li><button onClick="hideError" id="hideErrorButton">X</button></div>
-          <% })%>
-          </div>
+        <%- include('../partials/messages.ejs')%>
         <label for="firstName">First Name</label>
         <input type="text" name="firstName" id="firstName" placeholder="First Name" />
         <label for="lastName">Last Name</label>

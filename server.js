@@ -1,10 +1,15 @@
 // allows use to use 'process.env.' to reference hidden variables in the .env file
 require('dotenv').config();
-
 const express = require('express');
+const morgan = require('morgan');
 const app = express();
 const mongoose = require('mongoose'); // allows us to connect and work with mongo db
+const passport = require('passport');
+const flash = require('express-flash');
+const session = require('express-session');
 const userRoute = require('./routes/userRoute'); // contains all user account routes
+// passport config
+require('./config/passport')(passport);
 
 // Listen to port 3000
 const port = process.env.PORT || 3000; // get active environment port or port '3000'
@@ -24,10 +29,29 @@ mongoose.connect(
 // Middleware
 app.set('view engine', 'ejs'); // sets view engine to ejs
 app.use(express.static('public')); // sets the public folder as static (keep all js, imgs, styling in public folder)
+app.use(morgan('dev')); // helps with console logging http requests
 app.use(express.json()); // allows us to parse json data
 app.use(express.urlencoded({ extended: true })); // allows us to use 'req.body' to request data posted by user
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
 
-//routes
+// gobal vars
+app.use((req, res, next) => {
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  res.locals.error = req.flash('error');
+  next();
+});
+
+// Routes
 app.get('/', (req, res) => {
   res.redirect('/index');
 });
