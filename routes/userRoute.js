@@ -8,6 +8,7 @@ const { checkAuthenticated, checkNotAuthenticated } = require('../config/auth');
 
 router.get('/register', checkNotAuthenticated, (req, res) => {
   errors = [];
+
   res.render('../views/account/register', {
     title: 'Register',
     errors,

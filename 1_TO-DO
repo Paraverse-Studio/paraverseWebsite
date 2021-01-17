@@ -23,6 +23,7 @@ PRAB
   - create logout functionality and button ✅
   - hide error message button functionality ✅
   - maintain form data after validation error
-  - create blog routes (CRUD) ex. create, view, edit, delete blogs 
-  - allow only admins to create, edit and delete blogs
+  - create blog routes (CRUD) ex. create, view, edit, delete blogs ✅
+  - allow only admins to create, edit and delete blogs✅
+  - fix bug with creating/editting blogs (blogs do not get created...)
 }

@@ -10,6 +10,7 @@ const { checkAuthenticated, checkNotAuthenticated } = require('../config/auth');
 // displays all blogs to users
 router.get('/blogs', async (req, res) => {
   const blogs = await Blog.find().sort({ createdAt: 'desc' });
+
   res.render('../views/blogs/blogs', {
     title: 'Blogs',
     user: req.user,
