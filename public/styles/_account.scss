@@ -41,9 +41,11 @@ form.login-form {
     border-bottom: 2px solid red;
   }
 
-  .form-button {
+  .account-button {
     margin-top: 40px;
     padding: var(--smallBtnPadding);
+    background-color: var(--purpleColor);
+    color: white;
     cursor: pointer;
   }
 }

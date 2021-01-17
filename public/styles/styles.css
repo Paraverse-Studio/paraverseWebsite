@@ -174,9 +174,11 @@ form.login-form input:invalid {
   border-bottom: 2px solid red;
 }
 
-form.login-form .form-button {
+form.login-form .account-button {
   margin-top: 40px;
   padding: var(--smallBtnPadding);
+  background-color: var(--purpleColor);
+  color: white;
   cursor: pointer;
 }
 

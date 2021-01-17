@@ -17,8 +17,8 @@ router.get('/blogs', async (req, res) => {
   });
 });
 
-// get create blog page
-router.get('/blogs/new', async (req, res) => {
+// get create blog page [ADMIN ONLY]
+router.get('/blogs/new', checkAuthenticated, async (req, res) => {
   res.render('../views/blogs/new_blog', {
     title: 'New Blog',
     user: req.user,
@@ -40,7 +40,7 @@ router.get('/blogs/:slug', async (req, res) => {
 });
 
 // edit a blog [ADMIN ONLY]
-router.get('/blogs/edit/:id', async (req, res) => {
+router.get('/blogs/edit/:id', checkAuthenticated, async (req, res) => {
   const blog = await Blog.findById(req.params.id);
 
   res.render('../views/blogs/edit_blog', {
@@ -51,7 +51,7 @@ router.get('/blogs/edit/:id', async (req, res) => {
 });
 
 // post a blog [ADMIN ONLY]
-router.post('/blogs/new', async (req, res, next) => {
+router.post('/blogs/new', checkAuthenticated, async (req, res, next) => {
   const { title, description, markdown } = req.body;
 
   const blog = new Blog({
@@ -75,7 +75,7 @@ router.post('/blogs/new', async (req, res, next) => {
 });
 
 // apply changes to a blog [ADMIN ONLY]
-router.put('/blogs/:id', async (req, res, next) => {
+router.put('/blogs/:id', checkAuthenticated, async (req, res, next) => {
   req.blog = await Blog.findById(req.params.id);
   let blog = req.blog;
 
@@ -99,24 +99,8 @@ router.put('/blogs/:id', async (req, res, next) => {
 });
 
 // delete a blog [ADMIN ONLY]
-router.delete('/blogs/:id', (req, res) => {
+router.delete('/blogs/:id', checkAuthenticated, (req, res) => {
   res.redirect('/blogs');
 });
-
-function saveBlogAndRedirect(path, title) {
-  return async (req, res) => {
-    let blog = req.blog;
-    (blog.title = req.body.title),
-      (blog.description = req.body.description),
-      (blog.markdown = req.body.markdown);
-    try {
-      await blog.save();
-      console.log('saved');
-      res.redirect(`/blogs/${blog.slug}`);
-    } catch (e) {
-      res.render(`../views/blogs/${path}`, { blog: blog, title: `${title}` });
-    }
-  };
-}
 
 module.exports = router;
