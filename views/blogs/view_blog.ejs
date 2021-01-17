@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <title>Paraverse - <%= title %></title>
+  <%- include('../partials/_head.ejs') %>
+</head>
+
+<body>
+  <div>
+    <!-- TOP NAVIGATION BAR -->
+    <%- include('../partials/_navbar.ejs') %>
+    <br><br><br><br><br>
+    <!-- HEADER -->
+    <div class="welcome">
+      <h2>Paraverse  Blog</h2>
+      <section>Stay up to date with Paraverse Studio. View all our latest blogs here.</section><br>
+      <hr class="welcome"><br>
+    </div>
+    
+    <div>
+      <h4 class="title"><%= blog.title %></h4>
+      <div class="date-text-article">
+        <%= blog.createdAt.toLocaleDateString() %>
+      </div>
+      <div class="btn-container">
+        <a href="/blogs" class="a-btn grey">All Articles</a>
+        <a href="/blogs/edit/<%= blog.id %>" class="a-btn blue">Edit</a>
+      </div>
+      <div class="markdown-text">
+        <%- blog.sanitizedHtml %>
+      </div>
+  
+    </div>
+    
+    <!-- FOOTER  -->
+    <%- include('../partials/_footer.ejs') %>
+  </div>
+</body>
+</html>

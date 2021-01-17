@@ -7,6 +7,7 @@ const mongoose = require('mongoose'); // allows us to connect and work with mong
 const passport = require('passport');
 const flash = require('express-flash');
 const session = require('express-session');
+const methodOverride = require('method-override');
 const userRoute = require('./routes/userRoute'); // contains all user account routes
 const blogRoute = require('./routes/blogRoute'); // contains all blog routes
 // passport config
@@ -43,6 +44,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
+app.use(methodOverride('_method'));
 
 // gobal vars
 app.use((req, res, next) => {
@@ -54,9 +56,9 @@ app.use((req, res, next) => {
 
 // Routes
 app.get('/', (req, res) => {
-  res.redirect('/index');
+  res.redirect('/home');
 });
-app.get('/index', (req, res) => {
+app.get('/home', (req, res) => {
   res.render('index', { user: req.user });
 });
 app.get('/apps', (req, res) => {

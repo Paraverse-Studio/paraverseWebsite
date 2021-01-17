@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <title>Paraverse - <%= title %></title>
+  <%- include('../partials/_head.ejs') %>
+</head>
+
+<body>
+  <div>
+    
+      <!-- TOP NAVIGATION BAR -->
+      <%- include('../partials/_navbar.ejs') %>
+      <br><br><br><br><br>
+      <!-- HEADER -->
+      <div class="welcome">
+          <h2>Paraverse  Blog</h2>
+          <section>Stay up to date with Paraverse Studio. View all our latest blogs here.</section><br>
+          <hr class="welcome"><br>
+      </div>
+
+      <h4 class="page-label">Edit Article</h4>
+      <form action="/blogs/<%= blog.id %>?_method=PUT" method="POST">
+        <%- include('../partials/_form_fields.ejs'); %>
+      </form>
+      
+      <!-- FOOTER  -->
+      <%- include('../partials/_footer.ejs') %>
+  </div>
+</body>
+</html>

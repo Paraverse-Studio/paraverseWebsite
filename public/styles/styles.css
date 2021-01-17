@@ -157,6 +157,10 @@ form.login-form input:focus {
   opacity: 0.8;
 }
 
+form.login-form input:invalid {
+  border-bottom: 2px solid red;
+}
+
 form.login-form .form-button {
   margin-top: 40px;
   padding: var(--smallBtnPadding);

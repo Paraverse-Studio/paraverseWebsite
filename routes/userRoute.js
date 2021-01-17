@@ -4,7 +4,6 @@ const bcrypt = require('bcrypt'); // required to 'hash' user 'passwords' for 'us
 const passport = require('passport');
 const User = require('../models/userSchema');
 const jwt = require('jsonwebtoken'); // required to 'authorize' user to 'private routes'
-const { registrationValidation } = require('../config/userValidation');
 const { checkAuthenticated, checkNotAuthenticated } = require('../config/auth');
 
 router.get('/register', checkNotAuthenticated, (req, res) => {

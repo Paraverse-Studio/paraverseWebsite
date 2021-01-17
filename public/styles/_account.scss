@@ -37,6 +37,10 @@ form.login-form {
     opacity: 0.8;
   }
 
+  input:invalid {
+    border-bottom: 2px solid red;
+  }
+
   .form-button {
     margin-top: 40px;
     padding: var(--smallBtnPadding);

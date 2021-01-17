@@ -15,18 +15,18 @@
       <h2 class="page-header">Register</h2>
       <form class="login-form" method="POST" action="/account/register">
         <%- include('../partials/messages.ejs')%>
-        <label for="firstName">First Name</label>
+        <label>First Name</label>
         <input type="text" name="firstName" id="firstName" placeholder="First Name" />
-        <label for="lastName">Last Name</label>
+        <label>Last Name</label>
         <input type="text" name="lastName" id="lastName" placeholder="Last Name" />
-        <label for="email">Email</label>
+        <label>Email</label>
         <input type="email" name="email" id="email" placeholder="Email" />
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username" placeholder="Username" />
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" placeholder="Password" />
-        <label for="confirmPassword">Confirm Password</label>
-        <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" />
+        <label>Username</label>
+        <input minLength="6" type="text" name="username" id="username" placeholder="Username" />
+        <label>Password</label>
+        <input minLength="8" type="password" name="password" id="password" placeholder="Password" />
+        <label>Confirm Password</label>
+        <input minLength="8" type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" />
         <button class="form-button" type="submit">Register</button>
       </form>
     </section>
