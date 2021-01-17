@@ -125,12 +125,12 @@ nav {
   cursor: pointer;
 }
 
-.login-section {
+.account-section {
   margin: auto;
   text-align: center;
 }
 
-form.login-form {
+form.account-form {
   max-width: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -144,12 +144,12 @@ form.login-form {
   border: 2px solid var(--primaryColor);
 }
 
-form.login-form label {
+form.account-form label {
   margin: 20px 0 10px 0;
   font-size: var(--mediumFont);
 }
 
-form.login-form input {
+form.account-form input {
   border: 0;
   outline: 0;
   padding: 10px;
@@ -158,23 +158,23 @@ form.login-form input {
   cursor: pointer;
 }
 
-form.login-form input[type='text'],
-form.login-form input[type='password'],
-form.login-form input[type='placeholder'] {
+form.account-form input[type='text'],
+form.account-form input[type='password'],
+form.account-form input[type='placeholder'] {
   font-size: 1rem;
 }
 
-form.login-form input:hover,
-form.login-form input:focus {
+form.account-form input:hover,
+form.account-form input:focus {
   border-bottom: 2px solid var(--primaryColor);
   opacity: 0.8;
 }
 
-form.login-form input:invalid {
+form.account-form input:invalid {
   border-bottom: 2px solid red;
 }
 
-form.login-form .account-button {
+form.account-form .account-button {
   margin-top: 40px;
   padding: var(--smallBtnPadding);
   background-color: var(--purpleColor);
@@ -221,25 +221,25 @@ form.login-form .account-button {
   text-align: left;
 }
 
-.article-title-link {
+.blog-title-link {
   font-size: var(--largeFont);
-  color: lightskyblue;
+  color: #49b3f5;
   text-decoration: none;
   cursor: pointer;
 }
 
-.date-text {
+.blog-date-text {
   font-weight: 300;
   margin: 10px 0 15px 0;
   font-style: italic;
   color: var(--complementaryColor);
 }
 
-.description-text {
+.blog-description-text {
   padding: 10px 0;
 }
 
-.article-btns-container {
+.blog-btns-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -258,6 +258,7 @@ form.login-form .account-button {
   width: 65px;
   margin: 0 0 10px 0;
   color: white;
+  background-color: forestgreen;
 }
 
 .del-btn {

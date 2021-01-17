@@ -21,25 +21,25 @@
   text-align: left;
 }
 
-.article-title-link {
+.blog-title-link {
   font-size: var(--largeFont);
-  color: lightskyblue;
+  color: rgb(73, 179, 245);
   text-decoration: none;
   cursor: pointer;
 }
 
-.date-text {
+.blog-date-text {
   font-weight: 300;
   margin: 10px 0 15px 0;
   font-style: italic;
   color: var(--complementaryColor);
 }
 
-.description-text {
+.blog-description-text {
   padding: 10px 0;
 }
 
-.article-btns-container {
+.blog-btns-container {
   display: flex;
   flex-direction: column;
 }
@@ -53,6 +53,7 @@
   width: 65px;
   margin: 0 0 10px 0;
   color: white;
+  background-color: forestgreen;
 }
 
 .del-btn {

@@ -43,11 +43,11 @@ BlogSchema.pre('validate', (next) => {
 
   // convert markdown to html and then purify the html to
   // remove any malicious code and to escape all html characters
-  if (this.markdown) {
-    this.sanitizedHtml = dompurify.sanitize(marked(this.markdown));
+  if (this.article) {
+    this.sanitizedHtml = dompurify.sanitize(marked(this.article));
   }
 });
 
-const Blogs = mongoose.model('Blog', BlogSchema);
+const Blog = mongoose.model('Blog', BlogSchema);
 
-module.exports = Blogs;
+module.exports = Blog;

@@ -1,10 +1,6 @@
 // ################### THIS FILE CONTAINS ALL THE USER ACCOUNT ROUTES ###################//
 const router = require('express').Router();
-const bcrypt = require('bcrypt'); // required to 'hash' user 'passwords' for 'user security'
-const passport = require('passport');
-const User = require('../models/userSchema');
 const Blog = require('../models/blogSchema');
-const jwt = require('jsonwebtoken'); // required to 'authorize' user to 'private routes'
 const { checkAuthenticated, checkNotAuthenticated } = require('../config/auth');
 
 // displays all blogs to users
@@ -52,13 +48,13 @@ router.get('/blogs/edit/:id', checkAuthenticated, async (req, res) => {
 });
 
 // post a blog [ADMIN ONLY]
-router.post('/blogs/new', checkAuthenticated, async (req, res, next) => {
-  const { title, description, markdown } = req.body;
+router.post('/blogs/new', async (req, res, next) => {
+  const { title, description, article } = req.body;
 
   const blog = new Blog({
     title,
     description,
-    markdown,
+    article,
   });
 
   console.log(blog);
@@ -77,12 +73,15 @@ router.post('/blogs/new', checkAuthenticated, async (req, res, next) => {
 
 // apply changes to a blog [ADMIN ONLY]
 router.put('/blogs/:id', checkAuthenticated, async (req, res, next) => {
-  req.blog = await Blog.findById(req.params.id);
-  let blog = req.blog;
+  const { title, description, article } = req.body;
 
-  (blog.title = req.body.title),
-    (blog.description = req.body.description),
-    (blog.markdown = req.body.markdown);
+  req.blog = await Blog.findById(req.params.id);
+
+  req.blog = new Blog({
+    title,
+    description,
+    article,
+  });
 
   console.log(blog);
   try {

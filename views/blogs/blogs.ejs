@@ -18,18 +18,18 @@
 
   <section class="blogs-section">
     <% if (user != null || user != undefined) { %> 
-    <a href="/blogs/new" class="a-btn new-blog-btn">New Article</a>
+    <a href="/blogs/new" class="a-btn new-blog-btn">New Blog</a>
     <% } %> 
     <% blogs.forEach(blog => { %>
       <div class="blog-container">
         <div>
-          <h4><a href="/blogs/<%= blog.slug %>" class="article-title-link"><%= blog.title %></a></h4>
-          <div class="date-text"><%= blog.createdAt.toLocaleDateString() %></div>
-          <div class="description-text"><%= blog.description %></div>
+          <h4><a href="/blogs/<%= blog.slug %>" class="blog-title-link"><%= blog.title %></a></h4>
+          <div class="blog-date-text"><%= blog.createdAt.toLocaleDateString() %></div>
+          <div class="blog-description-text"><%= blog.description %></div>
         </div>
-        <div class="article-btns-container">
+        <div class="blog-btns-container">
           <% if (user != null || user != undefined) { %> 
-          <a href="/blogs/edit/<%= blog.id %>" class="a-btn edit-btn green-bg-color">Edit</a>
+          <a href="/blogs/edit/<%= blog.id %>" class="a-btn edit-btn">Edit</a>
           <form action="/blogs/<%= blog.id %>?_method=DELETE" method="POST">
             <button type="submit" class="btn del-btn">Delete</button>
           </form>
