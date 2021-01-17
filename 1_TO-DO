@@ -20,7 +20,7 @@ PRAB
   - user validation and authentication (login/registration)✅
   - display error messages for user feedback✅
   - welcome message for user once they login✅
-  - hide error message button functionality 
   - create logout functionality and button ✅
+  - hide error message button functionality ✅
   - maintain form data after validation error
 }
