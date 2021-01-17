@@ -18,11 +18,13 @@
           <section>Stay up to date with Paraverse Studio. View all our latest blogs here.</section><br>
           <hr class="welcome"><br>
       </div>
-
-      <h4 class="page-label">Edit Article</h4>
-      <form action="/blogs/<%= blog.id %>?_method=PUT" method="POST">
+      
+      <section class="blogs-section">
+      <h4 class="page-title">Edit Article</h4>
+      <form class="blog-form" action="/blogs/<%= blog.id %>?_method=PUT" method="POST">
         <%- include('../partials/_form_fields.ejs'); %>
       </form>
+      </section>
       
       <!-- FOOTER  -->
       <%- include('../partials/_footer.ejs') %>

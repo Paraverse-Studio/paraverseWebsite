@@ -3,7 +3,7 @@
   margin: 0;
   box-sizing: border-box;
 }
-
+//########################################### General Tag Styling Here ###########################################//
 body {
   font-family: 'Roboto', sans-serif;
 }
@@ -15,7 +15,8 @@ button {
 :root {
   --primaryColor: black;
   --secondaryColor: white;
-  --complementaryColor: grey;
+  --complementaryColor: rgb(175, 175, 175);
+  --purpleColor: #8a2be2;
   --navHeight: 80px;
   --borderRadius: 8px;
   --smallBtnPadding: 10px;
@@ -25,8 +26,20 @@ button {
   --largeFont: 1.5rem;
   --hugeFont: 2rem;
 }
+//########################################### General Styling Here ###########################################//
+.purple-bg-color {
+  background-color: var(--purpleColor);
+}
 
-.page-header {
+.green-bg-color {
+  background-color: green;
+}
+
+.red-bg-color {
+  background-color: red;
+}
+
+.page-title {
   font-size: var(--largeFont);
 }
 
@@ -34,8 +47,8 @@ button {
 @import 'Header';
 @import 'Account';
 @import 'Blog';
-@import 'Misc';
 @import 'Footer';
+@import 'Misc';
 @import 'Temp';
 
 .hide {

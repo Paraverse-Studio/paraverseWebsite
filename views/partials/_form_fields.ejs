@@ -1,20 +1,12 @@
-<div class="form-separators">
-  <label for="title">Title</label>
+
+  <label>Title</label>
   <input required value="<%= blog.title %>" type="text" name="title" id="title">
-</div>
-<div class="form-separators">
-  <label for="description">Description</label>
-  <textarea required type="text" name="description" id="description" 
-  class="description-textarea">
+
+  <label>Description</label>
+  <textarea required type="text" name="description" id="description" style="resize: none;">
     <%= blog.description %></textarea>
-</div>
-<div class="form-separators">
-  <label for="markdown">Markdown</label>
-  <textarea required type="text" name="markdown" id="markdown" 
-  class="markdown-textarea">
+  <label>Markdown</label>
+  <textarea required type="text" name="markdown" id="markdown" style="resize: none;">
     <%= blog.markdown %></textarea>
-</div>
-<div class="form-btn-container">
-  <a href="/blogs" class="a-btn grey">Cancel</a>
-  <button type="submit" class="btn green">Save</button>
-</div>
+  <button type="submit" class="btn save-btn purple-bg-color">Save</button>
+  <a href="/blogs" class="a-btn cancel-btn">Cancel</a>

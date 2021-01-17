@@ -16,23 +16,28 @@
       <hr class="welcome"><br>
   </div>
 
-  <div>
+  <section class="blogs-section">
+    <% if (user != null || user != undefined) { %> 
+    <a href="/blogs/new" class="a-btn new-blog-btn">New Article</a>
+    <% } %> 
     <% blogs.forEach(blog => { %>
-      <div class="container">
+      <div class="blog-container">
         <div>
-          <h4><a href="/<%= blog.slug %>" class="article-title-link"><%= blog.title %></a></h4>
+          <h4><a href="/blogs/<%= blog.slug %>" class="article-title-link"><%= blog.title %></a></h4>
           <div class="date-text"><%= blog.createdAt.toLocaleDateString() %></div>
           <div class="description-text"><%= blog.description %></div>
         </div>
         <div class="article-btns-container">
-          <a href="/blogs/edit/<%= blog.id %>" class="a-btn green">Edit</a>
+          <% if (user != null || user != undefined) { %> 
+          <a href="/blogs/edit/<%= blog.id %>" class="a-btn edit-btn green-bg-color">Edit</a>
           <form action="/blogs/<%= blog.id %>?_method=DELETE" method="POST">
-            <button type="submit" class="btn red">Delete</button>
+            <button type="submit" class="btn del-btn">Delete</button>
           </form>
+          <% } %> 
         </div>
       </div>
     <% }) %>
-  </div>
+    </section>
 
   <!-- FOOTER  -->
   <%- include('../partials/_footer.ejs') %>

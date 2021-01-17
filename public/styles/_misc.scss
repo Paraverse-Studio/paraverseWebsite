@@ -42,3 +42,21 @@
   text-align: left;
   list-style: none;
 }
+
+.a-btn {
+  padding: 10px;
+  border-radius: var(--borderRadius);
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn {
+  outline: 0;
+  border: 0;
+  padding: 10px;
+  border-radius: var(--borderRadius);
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+}

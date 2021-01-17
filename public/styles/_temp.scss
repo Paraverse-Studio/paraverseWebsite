@@ -23,7 +23,8 @@ a:link {
 a:visited {
   text-decoration: none;
 }
-a:hover {
+a:hover,
+button:hover {
   text-decoration: underline;
   color: rgb(175, 175, 175);
 }

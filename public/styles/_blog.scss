@@ -1,0 +1,139 @@
+.blogs-section {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.blog-container {
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  padding: 10px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+.article-title-link {
+  font-size: var(--largeFont);
+  color: lightskyblue;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.date-text {
+  font-weight: 300;
+  margin: 10px 0 15px 0;
+  font-style: italic;
+  color: var(--complementaryColor);
+}
+
+.description-text {
+  padding: 10px 0;
+}
+
+.article-btns-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-blog-btn {
+  color: white;
+  background-color: var(--purpleColor);
+}
+
+.edit-btn {
+  width: 65px;
+  margin: 0 0 10px 0;
+  color: white;
+}
+
+.del-btn {
+  color: white;
+  background-color: red;
+}
+
+.blog-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+
+  label {
+    margin: 20px 0 10px 0;
+    font-size: var(--mediumFont);
+  }
+
+  input {
+    outline: 0;
+    padding: 10px;
+    background-color: #eee;
+    border: 1px solid black;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+
+  textarea {
+    outline: 0;
+    padding: 10px;
+    background-color: #eee;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+
+  input[type='text'],
+  input[type='password'],
+  input[type='placeholder'] {
+    font-size: 1rem;
+  }
+
+  textarea[type='text'],
+  textarea[type='password'],
+  textarea[type='placeholder'] {
+    font-size: 1rem;
+  }
+
+  input:hover,
+  input:focus {
+    box-shadow: 1px 1px 3px inset var(--purpleColor),
+      -1px -1px 3px inset var(--purpleColor);
+    opacity: 0.8;
+  }
+
+  textarea:hover,
+  textarea:focus {
+    box-shadow: 1px 1px 3px inset var(--purpleColor),
+      -1px -1px 3px inset var(--purpleColor);
+    opacity: 0.8;
+  }
+
+  input:invalid {
+    box-shadow: 1px 1px 3px inset red, -1px -1px 3px inset red;
+  }
+
+  textarea:invalid {
+    box-shadow: 1px 1px 3px inset red, -1px -1px 3px inset red;
+  }
+
+  .form-button {
+    margin-top: 40px;
+    padding: var(--smallBtnPadding);
+    cursor: pointer;
+  }
+}
+
+.save-btn {
+  margin: 30px 0 0 0;
+  color: white;
+}
+
+.cancel-btn {
+  margin: 10px auto;
+}

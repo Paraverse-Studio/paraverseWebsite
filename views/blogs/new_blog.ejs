@@ -19,10 +19,12 @@
           <hr class="welcome"><br>
       </div>
       
-      <h4 class="page-label">New Article</h4>
-      <form action="/blogs" method="POST">
-        <%- include('../partials/_form_fields.ejs'); %>
-      </form>
+      <section class="blogs-section">
+        <h4 class="page-title">New Article</h4>
+        <form class="blog-form" action="/blogs" method="POST">
+          <%- include('../partials/_form_fields.ejs'); %>
+        </form>
+      </section>
       
       <!-- FOOTER  -->
       <%- include('../partials/_footer.ejs') %>
