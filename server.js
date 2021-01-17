@@ -8,6 +8,7 @@ const passport = require('passport');
 const flash = require('express-flash');
 const session = require('express-session');
 const userRoute = require('./routes/userRoute'); // contains all user account routes
+const blogRoute = require('./routes/blogRoute'); // contains all blog routes
 // passport config
 require('./config/passport')(passport);
 
@@ -56,23 +57,24 @@ app.get('/', (req, res) => {
   res.redirect('/index');
 });
 app.get('/index', (req, res) => {
-  res.render('index');
+  res.render('index', { user: req.user });
 });
 app.get('/apps', (req, res) => {
-  res.render('apps');
+  res.render('apps', { user: req.user });
 });
 app.get('/team', (req, res) => {
-  res.render('team');
+  res.render('team', { user: req.user });
 });
 app.get('/play', (req, res) => {
-  res.render('play');
+  res.render('play', { user: req.user });
 });
 app.get('/contact', (req, res) => {
-  res.render('contact');
+  res.render('contact', { user: req.user });
 });
 app.get('/privacy', (req, res) => {
-  res.render('privacy');
+  res.render('privacy', { user: req.user });
 });
 
 // This runs all account routes found in the 'routes/userRoute.js' file
 app.use('/account', userRoute);
+app.use('/', blogRoute);

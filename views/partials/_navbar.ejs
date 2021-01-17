@@ -6,8 +6,17 @@
     <li><a href="/blog" class="nav-link">BLOG</a></li>
     <li><a href="/play" class="nav-link">PLAY</a></li>
   </ul>
-  <div class="account-links">
-    <a href="/account/login" class="account-link">Login</a>
-    <a href="/account/register" class="account-link">Register</a>
-  </div>
+  <% if (user == null || user == undefined) { %>
+    <!-- This div displays when user is NOT logged in -->
+    <div class="logged-out-links">
+      <a href="/account/login" class="account-link">Login</a>
+      <a href="/account/register" class="account-link">Register</a>
+    </div>
+    <% } else { %>
+      <!-- This div displays when user HAS logged in -->
+    <div class="logged-in-links">
+      <a href="/account" class="account-link">Account</a>
+      <a href="/account/logout" class="hyperlink">Logout</a>
+    </div>
+    <% } %>
 </nav>

@@ -19,6 +19,8 @@ PRAB
   - create login and register pages ✅
   - user validation and authentication (login/registration)✅
   - display error messages for user feedback✅
-  - welcome message for user once they login
+  - welcome message for user once they login✅
   - hide error message button functionality 
+  - create logout functionality and button ✅
+  - maintain form data after validation error
 }

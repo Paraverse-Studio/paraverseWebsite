@@ -9,16 +9,29 @@ const { checkAuthenticated, checkNotAuthenticated } = require('../config/auth');
 
 router.get('/register', checkNotAuthenticated, (req, res) => {
   errors = [];
-  res.render('../views/account/register', { title: 'Register', errors });
+  res.render('../views/account/register', {
+    title: 'Register',
+    errors,
+    user: req.user,
+  });
 });
 
 router.get('/login', checkNotAuthenticated, (req, res) => {
   errors = [];
-  res.render('../views/account/login', { title: 'Login', errors });
+  res.render('../views/account/login', {
+    title: 'Login',
+    errors,
+    user: req.user,
+  });
 });
 
 router.get('/', checkAuthenticated, (req, res) => {
-  res.render('../views/account/account', { title: 'Account' });
+  res.render('../views/account/account', {
+    title: 'Account',
+    firstName: req.user.firstName,
+    lastName: req.user.lastName,
+    user: req.user,
+  });
 });
 
 router.post('/register', checkNotAuthenticated, async (req, res) => {
@@ -67,6 +80,7 @@ router.post('/register', checkNotAuthenticated, async (req, res) => {
     return res.render('../views/account/register', {
       title: 'Register',
       errors,
+      user: req.user,
     });
   }
 
@@ -95,6 +109,12 @@ router.post('/login', checkNotAuthenticated, (req, res, next) => {
     failureRedirect: '/account/login',
     failureFlash: true,
   })(req, res, next);
+});
+
+router.get('/logout', (req, res) => {
+  req.logOut();
+  req.flash('success_msg', 'You have successfully logged out');
+  res.redirect('/');
 });
 
 module.exports = router;

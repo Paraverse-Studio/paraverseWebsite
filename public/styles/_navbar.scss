@@ -29,21 +29,38 @@ nav {
   opacity: 0.5;
 }
 
-.account-links {
-  width: 10%;
+.logged-out-links {
+  width: 170px;
   display: flex;
   height: var(--navHeight);
   margin: auto 0;
 }
 
+.logged-in-links {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  height: var(--navHeight);
+  margin: auto 0;
+}
+
 .account-link {
-  width: 70px;
+  width: 80px;
   margin: auto;
-  color: black;
-  background-color: var(--complementaryColor);
+  color: white;
+  background-color: #8a2be2;
   border-radius: var(--borderRadius);
   padding: var(--smallBtnPadding);
   text-align: center;
   text-decoration: none;
+  cursor: pointer;
+}
+
+.hyperlink {
+  width: 70px;
+  margin: auto;
+  color: black;
+  padding: var(--smallBtnPadding);
+  text-align: center;
   cursor: pointer;
 }

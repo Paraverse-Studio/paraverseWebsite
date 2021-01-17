@@ -36,39 +36,8 @@ button {
 @import 'Blog';
 @import 'Misc';
 @import 'Footer';
+@import 'Temp';
 
-.errors {
-  list-style: none;
-  padding: 10px;
-
-  div {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 5px 0;
-    background-color: lightcoral;
-    padding: 5px;
-    border-radius: var(--borderRadius);
-    li {
-      width: 350px;
-      text-align: left;
-    }
-
-    button {
-      outline: 0;
-      border: 0;
-      width: 20px;
-      height: 20px;
-      margin: 0;
-      padding: 0;
-      color: white;
-      background-color: red;
-      border-radius: 50%;
-      align-content: right;
-    }
-  }
-
-  .hide {
-    display: none;
-  }
+.hide {
+  display: none;
 }

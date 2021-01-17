@@ -69,8 +69,8 @@ nav {
   opacity: 0.5;
 }
 
-.account-links {
-  width: 10%;
+.logged-out-links {
+  width: 170px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -78,15 +78,37 @@ nav {
   margin: auto 0;
 }
 
+.logged-in-links {
+  width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: var(--navHeight);
+  margin: auto 0;
+}
+
 .account-link {
-  width: 70px;
+  width: 80px;
   margin: auto;
-  color: black;
-  background-color: var(--complementaryColor);
+  color: white;
+  background-color: #8a2be2;
   border-radius: var(--borderRadius);
   padding: var(--smallBtnPadding);
   text-align: center;
   text-decoration: none;
+  cursor: pointer;
+}
+
+.hyperlink {
+  width: 70px;
+  margin: auto;
+  color: black;
+  padding: var(--smallBtnPadding);
+  text-align: center;
   cursor: pointer;
 }
 
@@ -220,48 +242,179 @@ footer li {
   color: #555;
 }
 
-.errors {
-  list-style: none;
-  padding: 10px;
+a {
+  color: #555;
 }
 
-.errors div {
+a.play {
+  color: #2ab118;
+  text-decoration: none;
+}
+
+a.linkedin {
+  color: #0e44aa;
+}
+
+a.steam {
+  color: #0e44aa;
+}
+
+a.website {
+  color: rgba(230, 120, 17, 0.863);
+}
+
+a.github {
+  color: #ad33ff;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #afafaf;
+}
+
+a:hover.play {
+  color: #38ce38;
+  text-decoration: none;
+}
+
+a:hover.linkedin {
+  color: #73a0f3;
+}
+
+a:hover.steam {
+  color: #6178a1;
+}
+
+a:hover.website {
+  color: rgba(240, 156, 78, 0.863);
+}
+
+a:hover.github {
+  color: #b383ff;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+/* 
+  5) <div> TAGS ------------------------
+*/
+div.welcome {
+  color: #444;
+  text-align: center;
+  font-size: 20px;
+  background: white;
+  padding: 5px;
+  -webkit-box-shadow: 0px 0px 1px 0px #959595;
+          box-shadow: 0px 0px 1px 0px #959595;
+}
+
+div.welcome h2 {
+  font-size: 20px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+div.welcome section {
+  font-size: 15px;
+}
+
+div.container {
+  background: white;
+  -webkit-box-shadow: 0px 0px 1px 0px #959595;
+          box-shadow: 0px 0px 1px 0px #959595;
+}
+
+div.content {
+  padding-top: 50px;
+  padding-bottom: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: 5px 0;
-  background-color: lightcoral;
-  padding: 5px;
-  border-radius: var(--borderRadius);
 }
 
-.errors div li {
-  width: 350px;
-  text-align: left;
+/* 
+  6) <section> TAGS ------------------------
+*/
+section.text {
+  width: 40%;
+  position: relative;
 }
 
-.errors div button {
-  outline: 0;
-  border: 0;
-  width: 20px;
-  height: 20px;
-  margin: 0;
-  padding: 0;
-  color: white;
-  background-color: red;
-  border-radius: 50%;
-  -ms-flex-line-pack: right;
-      align-content: right;
+section.text div.links {
+  word-spacing: 50px;
 }
 
-.errors .hide {
+section h2 {
+  -webkit-text-decoration: bold;
+          text-decoration: bold;
+  font-size: 36px;
+  margin: 0px;
+}
+
+section.video {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  height: 50%;
+  left: 10%;
+  position: relative;
+  text-align: center;
+}
+
+section.video iframe {
+  border-radius: 10px;
+}
+
+section.image {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  left: 5%;
+  opacity: 20%;
+  position: relative;
+  text-align: center;
+}
+
+/* 
+  7) #id ------------------------
+*/
+#ozoneGuardian {
+  background-color: #bac1eb;
+}
+
+#colossalSaga {
+  background-color: #eaebba;
+}
+
+#easyviewr {
+  background-color: #bae8eb;
+}
+
+#easybillr {
+  background-color: #b2cdf0;
+}
+
+#abhinav {
+  background-color: #ebd2ba;
+}
+
+#abhishek {
+  background-color: #bae8eb;
+}
+
+#prab {
+  background-color: #dee9d9;
+}
+
+.hide {
   display: none;
 }
 /*# sourceMappingURL=styles.css.map */
