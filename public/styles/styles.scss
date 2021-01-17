@@ -10,7 +10,6 @@ body {
 
 button {
   font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
 }
 
 :root {
@@ -32,8 +31,11 @@ button {
 }
 
 @import 'Navbar';
+@import 'Header';
 @import 'Account';
 @import 'Blog';
+@import 'Misc';
+@import 'Footer';
 
 .errors {
   list-style: none;

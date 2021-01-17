@@ -16,6 +16,9 @@ AB
 PRAB
 {
   ADD IN YOUR APPS
-  - create login and register pages
-  - 
+  - create login and register pages ✅
+  - user validation and authentication (login/registration)✅
+  - display error messages for user feedback✅
+  - welcome message for user once they login
+  - hide error message button functionality 
 }

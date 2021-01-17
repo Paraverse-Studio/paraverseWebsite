@@ -5,22 +5,23 @@ const passport = require('passport');
 const User = require('../models/userSchema');
 const jwt = require('jsonwebtoken'); // required to 'authorize' user to 'private routes'
 const { registrationValidation } = require('../config/userValidation');
+const { checkAuthenticated, checkNotAuthenticated } = require('../config/auth');
 
-router.get('/register', (req, res) => {
+router.get('/register', checkNotAuthenticated, (req, res) => {
   errors = [];
   res.render('../views/account/register', { title: 'Register', errors });
 });
 
-router.get('/login', (req, res) => {
+router.get('/login', checkNotAuthenticated, (req, res) => {
   errors = [];
   res.render('../views/account/login', { title: 'Login', errors });
 });
 
-router.get('/', (req, res) => {
+router.get('/', checkAuthenticated, (req, res) => {
   res.render('../views/account/account', { title: 'Account' });
 });
 
-router.post('/register', async (req, res) => {
+router.post('/register', checkNotAuthenticated, async (req, res) => {
   // 'registration information' entered by user which we can 'request' from the 'body'
   let errors = [];
 
@@ -88,7 +89,7 @@ router.post('/register', async (req, res) => {
   res.redirect('/account/login');
 });
 
-router.post('/login', (req, res, next) => {
+router.post('/login', checkNotAuthenticated, (req, res, next) => {
   passport.authenticate('local', {
     successRedirect: '/account',
     failureRedirect: '/account/login',

@@ -1,0 +1,44 @@
+.message-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.error-bg {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 7px;
+  border-radius: var(--borderRadius);
+  margin: 5px 0;
+  background-color: lightcoral;
+  text-align: left;
+  list-style: none;
+}
+
+.message-text {
+  width: 350px;
+}
+
+.error-button {
+  border: 0;
+  outline: 0;
+  width: 15px;
+  height: 15px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: black;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.success-bg {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 7px;
+  border-radius: var(--borderRadius);
+  margin: 5px 0;
+  background-color: lightgreen;
+  text-align: left;
+  list-style: none;
+}
