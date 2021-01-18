@@ -184,7 +184,7 @@ form.account-form .account-button {
 
 .blogs-section {
   width: 100%;
-  max-width: 1000px;
+  max-width: 800px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -229,7 +229,7 @@ form.account-form .account-button {
 }
 
 .blog-date-text {
-  font-weight: 300;
+  font-weight: 500;
   margin: 10px 0 15px 0;
   font-style: italic;
   color: var(--complementaryColor);
@@ -247,23 +247,6 @@ form.account-form .account-button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-.new-blog-btn {
-  color: white;
-  background-color: var(--purpleColor);
-}
-
-.edit-btn {
-  width: 65px;
-  margin: 0 0 10px 0;
-  color: white;
-  background-color: forestgreen;
-}
-
-.del-btn {
-  color: white;
-  background-color: red;
 }
 
 .blog-form {
@@ -284,6 +267,7 @@ form.account-form .account-button {
 }
 
 .blog-form input {
+  font-family: 'Roboto', sans-serif;
   outline: 0;
   padding: 10px;
   background-color: #eee;
@@ -293,11 +277,20 @@ form.account-form .account-button {
 }
 
 .blog-form textarea {
+  font-family: 'Roboto', sans-serif;
   outline: 0;
   padding: 10px;
   background-color: #eee;
   margin: 10px 0;
   cursor: pointer;
+}
+
+.blog-form textarea:first-of-type {
+  height: 75px;
+}
+
+.blog-form textarea:last-of-type {
+  height: 500px;
 }
 
 .blog-form input[type='text'],
@@ -340,6 +333,52 @@ form.account-form .account-button {
   margin-top: 40px;
   padding: var(--smallBtnPadding);
   cursor: pointer;
+}
+
+.article-title {
+  font-size: var(--hugeFont);
+  line-height: 4rem;
+}
+
+.view-blog-btns-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.article-container {
+  padding: 50px 0;
+  text-align: left;
+}
+
+.new-blog-btn {
+  color: white;
+  background-color: var(--purpleColor);
+}
+
+.articles-btn {
+  margin: 0 0 10px 0;
+  color: white;
+  background-color: var(--purpleColor);
+}
+
+.edit-btn {
+  width: 65px;
+  margin: 0 0 10px 0;
+  color: white;
+  background-color: forestgreen;
+}
+
+.del-btn {
+  color: white;
+  background-color: red;
 }
 
 .save-btn {

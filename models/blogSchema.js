@@ -33,19 +33,21 @@ const BlogSchema = mongoose.Schema({
   },
 });
 
-// this runs before validating blog data
-BlogSchema.pre('validate', (next) => {
-  //create a unique slug for each blog using the blog title
+// this runs before validating article data
+BlogSchema.pre('validate', function (next) {
+  // creates a unique slug for each article using the article title
   // and converting it into a url friendly string
   if (this.title) {
     this.slug = slugify(this.title, { lower: true, strict: true });
   }
 
-  // convert markdown to html and then purify the html to
+  // converts markdown to html and then purifies the html to
   // remove any malicious code and to escape all html characters
   if (this.article) {
     this.sanitizedHtml = dompurify.sanitize(marked(this.article));
   }
+
+  next();
 });
 
 const Blog = mongoose.model('Blog', BlogSchema);

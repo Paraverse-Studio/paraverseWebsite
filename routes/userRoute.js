@@ -114,7 +114,7 @@ router.post('/login', checkNotAuthenticated, (req, res, next) => {
 router.get('/logout', (req, res) => {
   req.logOut();
   req.flash('success_msg', 'You have successfully logged out');
-  res.redirect('/');
+  res.redirect('/account/login');
 });
 
 module.exports = router;

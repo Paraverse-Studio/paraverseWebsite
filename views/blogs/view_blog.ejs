@@ -18,20 +18,21 @@
       <hr class="welcome"><br>
     </div>
     
-    <div>
-      <h4 class="title"><%= blog.title %></h4>
-      <div class="date-text-article">
+    <section class="blogs-section">
+      <% if (user != null || user != undefined) { %> 
+      <div class="view-blog-btns-container">
+        <a href="/blogs" class="a-btn articles-btn">All Articles</a>
+        <a href="/blogs/edit/<%= blog.id %>" class="a-btn edit-btn">Edit</a>
+      </div>
+      <% } %> 
+      <h4 class="article-title"><%= blog.title %></h4>
+      <div class="blog-date-text">
         <%= blog.createdAt.toLocaleDateString() %>
       </div>
-      <div class="btn-container">
-        <a href="/blogs" class="a-btn grey">All Articles</a>
-        <a href="/blogs/edit/<%= blog.id %>" class="a-btn blue">Edit</a>
-      </div>
-      <div class="article-text">
+      <div class="article-container">
         <%- blog.sanitizedHtml %>
       </div>
-  
-    </div>
+    </section>
     
     <!-- FOOTER  -->
     <%- include('../partials/_footer.ejs') %>

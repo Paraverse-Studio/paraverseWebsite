@@ -48,7 +48,7 @@ router.get('/blogs/edit/:id', checkAuthenticated, async (req, res) => {
 });
 
 // post a blog [ADMIN ONLY]
-router.post('/blogs/new', async (req, res, next) => {
+router.post('/blogs/new', checkAuthenticated, async (req, res, next) => {
   const { title, description, article } = req.body;
 
   const blog = new Blog({
@@ -57,14 +57,16 @@ router.post('/blogs/new', async (req, res, next) => {
     article,
   });
 
-  console.log(blog);
   try {
-    const savedBlog = await blog.save();
-    console.log('saved');
+    console.log('saving....' + blog);
+    const savedBlog = await blog.save((err, result) => {
+      if (err) console.log(err);
+      else console.log(savedBlog);
+    });
     res.redirect(`/blogs/${blog.slug}`);
   } catch (e) {
     res.render('../views/blogs/new_blog', {
-      blog: blog,
+      blog,
       title: 'New Blog',
       user: req.user,
     });
@@ -77,21 +79,21 @@ router.put('/blogs/:id', checkAuthenticated, async (req, res, next) => {
 
   req.blog = await Blog.findById(req.params.id);
 
-  req.blog = new Blog({
-    title,
-    description,
-    article,
-  });
+  let blog = req.blog;
 
-  console.log(blog);
+  blog.title = title;
+  blog.description = description;
+  blog.article = article;
+
   try {
-    console.log('saving...');
-    blog = await blog.save();
-    console.log('saved');
+    const savedBlog = await blog.save((err, result) => {
+      if (err) console.log(err);
+      else console.log(savedBlog);
+    });
     res.redirect(`/blogs/${blog.slug}`);
   } catch (e) {
     res.render('../views/blogs/edit_blog', {
-      blog: blog,
+      blog,
       title: 'Edit Blog',
       user: req.user,
     });
@@ -99,7 +101,8 @@ router.put('/blogs/:id', checkAuthenticated, async (req, res, next) => {
 });
 
 // delete a blog [ADMIN ONLY]
-router.delete('/blogs/:id', checkAuthenticated, (req, res) => {
+router.delete('/blogs/:id', checkAuthenticated, async (req, res) => {
+  await Blog.findByIdAndDelete(req.params.id);
   res.redirect('/blogs');
 });
 
