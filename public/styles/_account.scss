@@ -1,6 +1,7 @@
 .account-section {
   margin: auto;
   text-align: center;
+  padding: 50px 0;
 }
 
 form.account-form {
@@ -48,4 +49,58 @@ form.account-form {
     color: white;
     cursor: pointer;
   }
+}
+
+.user-profile {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 35px auto;
+
+  label {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    text-align: left;
+  }
+}
+
+.user-account-data-container {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.user-account-detail {
+  width: 100%;
+  min-width: 350px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto 0;
+}
+
+.first-name-data-display,
+.last-name-data-display,
+.username-data-display,
+.email-data-display {
+  width: 250px;
+  text-align: left;
+}
+
+.first-name-data-input,
+.last-name-data-input,
+.username-data-input,
+.email-data-input {
+  width: 250px;
+  text-align: left;
+  padding: 3px;
+}
+
+.change-btn-container {
+  display: flex;
+  flex-direction: row;
 }

@@ -1,23 +1,82 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Paraverse - <%= title %></title>
-        <%- include('../partials/_head.ejs') %>
-    </head>
+  <head>
+    <title>Paraverse - <%= title %></title>
+    <%- include('../partials/_head.ejs') %>
+  </head>
 
     <body>
-        <!-- TOP NAVIGATION BAR -->
-        <%- include('../partials/_navbar.ejs') %>
-        <br><br><br><br><br>
-        <!-- HEADER -->
-        <div class="welcome">
-            <h2 class="page-title">Account</h2>
-            Welcome, <%= firstName %> <%= lastName %>
-            <section>Access all your account and profile details here.</section><br>
-            <hr class="welcome"><br>
+      <!-- TOP NAVIGATION BAR -->
+      <%- include('../partials/_navbar.ejs') %>
+      <br><br><br><br><br>
+      <!-- HEADER -->
+      <div class="welcome">
+        <h2 class="page-title">Account</h2>
+        <section>Access all your account and profile details here.</section><br>
+        <hr class="welcome"><br>
+      </div>
+
+      <section class="account-section">
+        <h3>Welcome, <%= user.firstName %> <%= user.lastName %></h3>
+        <div class="user-profile">
+        <div class="user-account-data-container">
+          <span class="user-account-detail">
+            <label>First Name: </label>
+            <div class="first-name-data-display"><%= user.firstName %></div>
+            <input class="first-name-data-input hide" type="text" name="firstName" for="firstName" id="firstName" value=<%= user.firstName%>>
+          </span>
+          <div class="edit-btn-container">
+            <button class="edit-first-name">Edit</button>
+          </div>
+          <form class="first-name-change-btn-container hide" action="/account?_method=PUT" method="POST">
+            <button class="apply-first-name">Apply</button>
+            <button class="cancel-first-name">Cancel</button>
+          </form>
         </div>
-        <!-- FOOTER  -->
-        <%- include('../partials/_footer.ejs') %>
-        
+        <div class="user-account-data-container">
+          <span class="user-account-detail">
+            <label>Last Name: </label>
+            <div class="last-name-data-display"><%= user.lastName %></div>
+            <input class="last-name-data-input hide" type="text" name="lastName" for="lastName" id="lastName" value=<%= user.lastName%>>
+          </span>
+          <div class="edit-btn-container">
+            <button class="edit-last-name">Edit</button>
+          </div>
+          <form class="last-name-change-btn-container hide" action="/account/<%= user._id %>?_method=PUT" method="POST">
+            <button class="apply-last-name">Apply</button>
+            <button class="cancel-last-name">Cancel</button>
+          </form>
+        </div>
+        <div class="user-account-data-container">
+          <span class="user-account-detail">
+            <label>Username: </label>
+            <div class="username-data-display"><%= user.username %></div>
+            <input class="username-data-input hide" type="text" name="username" for="username" id="username" value=<%= user.username%>>
+          </span>
+          <div class="edit-btn-container">
+            <button class="edit-username">Edit</button>
+          </div>
+          <form class="username-change-btn-container hide" action="/account?_method=PUT" method="POST">
+            <button class="apply-username">Apply</button>
+            <button class="cancel-username">Cancel</button>
+          </form>
+        </div>
+        <div class="user-account-data-container">
+          <span class="user-account-detail">
+            <label>Email: </label>
+            <div class="email-data-display"><%= user.email %></div>
+            <input class="email-data-input hide" type="email" name="email" for="email" id="email" value=<%= user.email%>>
+          </span>
+          <button class="edit-email">Edit</button>
+          <form class="email-change-btn-container hide" action="/account?_method=PUT" method="POST">
+            <button type="submit" class="apply-email">Apply</button>
+            <button class="cancel-email">Cancel</button>
+          </form>
+        </div>
+        </div>
+      </section>
+      <!-- FOOTER  -->
+      <%- include('../partials/_footer.ejs') %>
+      
     </body>
     </html>

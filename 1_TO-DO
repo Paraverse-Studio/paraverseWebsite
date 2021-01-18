@@ -25,5 +25,12 @@ PRAB
   - maintain form data after validation error
   - create blog routes (CRUD) ex. create, view, edit, delete blogs ✅
   - allow only admins to create, edit and delete blogs✅
-  - fix bug with creating/editting blogs (blogs do not get created...)
+  - fix bug with creating/editting blogs (blogs do not get created...)✅
+  - create account page with profile
+  - allow account information editting
+
+  - learn how to store user information unique for each account (or maybe just use mongodb?)
+
+  - create admin and user accounts rather than just user (future)
+  - account rank system? (future)
 }

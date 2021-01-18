@@ -10,6 +10,7 @@ const session = require('express-session');
 const methodOverride = require('method-override');
 const userRoute = require('./routes/userRoute'); // contains all user account routes
 const blogRoute = require('./routes/blogRoute'); // contains all blog routes
+const accountRoute = require('./routes/accountRoute'); // contains all blog routes
 // passport config
 require('./config/passport')(passport);
 
@@ -80,3 +81,4 @@ app.get('/privacy', (req, res) => {
 // This runs all account routes found in the 'routes/userRoute.js' file
 app.use('/account', userRoute);
 app.use('/', blogRoute);
+app.use('/', accountRoute);

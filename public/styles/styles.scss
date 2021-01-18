@@ -10,6 +10,7 @@ body {
 
 button {
   font-family: 'Roboto', sans-serif;
+  cursor: pointer;
 }
 
 :root {
@@ -36,9 +37,8 @@ button {
 .red-bg-color {
   background-color: red;
 }
-
 .page-title {
-  font-size: var(--largeFont);
+  font-size: var(--hugeFont);
 }
 
 @import 'Navbar';

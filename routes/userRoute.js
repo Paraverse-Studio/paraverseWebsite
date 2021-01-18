@@ -25,11 +25,9 @@ router.get('/login', checkNotAuthenticated, (req, res) => {
   });
 });
 
-router.get('/', checkAuthenticated, (req, res) => {
+router.get('/', checkAuthenticated, async (req, res) => {
   res.render('../views/account/account', {
     title: 'Account',
-    firstName: req.user.firstName,
-    lastName: req.user.lastName,
     user: req.user,
   });
 });
@@ -45,6 +43,7 @@ router.post('/register', checkNotAuthenticated, async (req, res) => {
     username,
     password,
     confirmPassword,
+    adminCode,
   } = req.body;
 
   // validate user registration information
@@ -70,7 +69,8 @@ router.post('/register', checkNotAuthenticated, async (req, res) => {
     errors.push(
       'Password can not match your first name, last name or username'
     );
-
+  if (adminCode !== process.env.ADMIN_CODE)
+    errors.push('Admin code is invalid');
   const usernameExists = await User.findOne({ username });
   if (usernameExists)
     errors.push('Email already exists, use a different email');

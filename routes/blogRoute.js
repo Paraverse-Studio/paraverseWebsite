@@ -90,7 +90,7 @@ router.put('/blogs/:id', checkAuthenticated, async (req, res, next) => {
   try {
     const savedBlog = await blog.save((err, result) => {
       if (err) console.log(err);
-      else console.log(savedBlog);
+      else console.log(result);
     });
     res.redirect(`/blogs/${blog.slug}`);
   } catch (e) {
