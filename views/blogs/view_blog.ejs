@@ -19,16 +19,27 @@
     </div>
     
     <section class="blogs-section">
-      <% if (user != null || user != undefined) { %> 
       <div class="view-blog-btns-container">
         <a href="/blogs" class="a-btn articles-btn">All Articles</a>
+        <% if (user != null || user != undefined) { %> 
         <a href="/blogs/edit/<%= blog.id %>" class="a-btn edit-btn">Edit</a>
+        <% } %> 
       </div>
-      <% } %> 
       <h4 class="article-title"><%= blog.title %></h4>
       <div class="blog-date-text">
         <%= blog.createdAt.toLocaleDateString() %>
       </div>
+      <span>
+        <% if (blog.author === "Abhinav Mohan") { %>
+          <img class="author-image" src="../../images/Abhinav.png"><span class="author-name"><%= blog.author %></span>
+        <% } else if (blog.author === "Abhishek Mohan") { %>
+          <img class="author-image" src="../../images/Abhishek.jpg"><span class="author-name"><%= blog.author %></span>
+        <% } else if (blog.author === "Prabdeep Dhaliwal") { %>
+          <img class="author-image" src="../../images/Prab.jpg"><span class="author-name"><%= blog.author %></span>
+        <% } else { %>
+          Author not named
+        <% } %>
+      </span>
       <div class="article-container">
         <%- blog.sanitizedHtml %>
       </div>

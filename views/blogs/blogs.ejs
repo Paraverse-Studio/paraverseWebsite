@@ -24,7 +24,20 @@
       <div class="blog-container">
         <div>
           <h4><a href="/blogs/<%= blog.slug %>" class="blog-title-link"><%= blog.title %></a></h4>
-          <div class="blog-date-text"><%= blog.createdAt.toLocaleDateString() %></div>
+          <div class="blog-date-text">
+            <%= blog.createdAt.toLocaleDateString() %>
+          </div>
+          <span>
+            <% if (blog.author === "Abhinav Mohan") { %>
+              <img class="author-image" src="../../images/Abhinav.png"><span class="author-name"><%= blog.author %></span>
+            <% } else if (blog.author === "Abhishek Mohan") { %>
+              <img class="author-image" src="../../images/Abhishek.jpg"><span class="author-name"><%= blog.author %></span>
+            <% } else if (blog.author === "Prabdeep Dhaliwal") { %>
+              <img class="author-image" src="../../images/Prab.jpg"><span class="author-name"><%= blog.author %></span>
+            <% } else { %>
+              Author not named
+            <% } %>
+          </span>
           <div class="blog-description-text"><%= blog.description %></div>
         </div>
         <div class="blog-btns-container">

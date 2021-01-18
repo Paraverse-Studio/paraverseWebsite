@@ -49,10 +49,11 @@ router.get('/blogs/edit/:id', checkAuthenticated, async (req, res) => {
 
 // post a blog [ADMIN ONLY]
 router.post('/blogs/new', checkAuthenticated, async (req, res, next) => {
-  const { title, description, article } = req.body;
+  const { title, author, description, article } = req.body;
 
   const blog = new Blog({
     title,
+    author,
     description,
     article,
   });
@@ -75,13 +76,14 @@ router.post('/blogs/new', checkAuthenticated, async (req, res, next) => {
 
 // apply changes to a blog [ADMIN ONLY]
 router.put('/blogs/:id', checkAuthenticated, async (req, res, next) => {
-  const { title, description, article } = req.body;
+  const { title, author, description, article } = req.body;
 
   req.blog = await Blog.findById(req.params.id);
 
   let blog = req.blog;
 
   blog.title = title;
+  blog.author = author;
   blog.description = description;
   blog.article = article;
 

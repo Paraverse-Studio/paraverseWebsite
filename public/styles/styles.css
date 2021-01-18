@@ -16,7 +16,7 @@ button {
 :root {
   --primaryColor: black;
   --secondaryColor: white;
-  --complementaryColor: rgb(175, 175, 175);
+  --complementaryColor: rgb(109, 109, 109);
   --purpleColor: #8a2be2;
   --navHeight: 80px;
   --borderRadius: 8px;
@@ -194,7 +194,7 @@ form.account-form .account-button {
           flex-direction: column;
   -ms-flex-line-pack: center;
       align-content: center;
-  text-align: center;
+  text-align: left;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -230,13 +230,17 @@ form.account-form .account-button {
 
 .blog-date-text {
   font-weight: 500;
-  margin: 10px 0 15px 0;
+  margin: 10px 0 5px 0;
   font-style: italic;
   color: var(--complementaryColor);
 }
 
+.author-name {
+  margin: auto 10px;
+}
+
 .blog-description-text {
-  padding: 10px 0;
+  padding: 20px 0 0 0;
 }
 
 .blog-btns-container {
@@ -309,14 +313,12 @@ form.account-form .account-button {
 .blog-form input:focus {
   -webkit-box-shadow: 1px 1px 3px inset var(--purpleColor), -1px -1px 3px inset var(--purpleColor);
           box-shadow: 1px 1px 3px inset var(--purpleColor), -1px -1px 3px inset var(--purpleColor);
-  opacity: 0.8;
 }
 
 .blog-form textarea:hover,
 .blog-form textarea:focus {
   -webkit-box-shadow: 1px 1px 3px inset var(--purpleColor), -1px -1px 3px inset var(--purpleColor);
           box-shadow: 1px 1px 3px inset var(--purpleColor), -1px -1px 3px inset var(--purpleColor);
-  opacity: 0.8;
 }
 
 .blog-form input:invalid {
@@ -338,6 +340,12 @@ form.account-form .account-button {
 .article-title {
   font-size: var(--hugeFont);
   line-height: 4rem;
+}
+
+.author-image {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
 }
 
 .view-blog-btns-container {
