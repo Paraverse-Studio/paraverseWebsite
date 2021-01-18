@@ -71,6 +71,7 @@ router.post('/register', checkNotAuthenticated, async (req, res) => {
     );
   if (adminCode !== process.env.ADMIN_CODE)
     errors.push('Admin code is invalid');
+
   const usernameExists = await User.findOne({ username });
   if (usernameExists)
     errors.push('Email already exists, use a different email');
