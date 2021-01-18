@@ -36,7 +36,15 @@
 }
 
 .author-name {
-  margin: auto 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.author-image {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
 .blog-description-text {
@@ -130,12 +138,6 @@
 .article-title {
   font-size: var(--hugeFont);
   line-height: 4rem;
-}
-
-.author-image {
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
 }
 
 .view-blog-btns-container {

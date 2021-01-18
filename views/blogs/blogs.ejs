@@ -29,11 +29,11 @@
           </div>
           <span>
             <% if (blog.author === "Abhinav Mohan") { %>
-              <img class="author-image" src="../../images/Abhinav.jpg"><span class="author-name"><%= blog.author %></span>
+              <a href="/team#abhinav" class="author-name"><img class="author-image" src="../../images/Abhinav.jpg"><%= blog.author %></a>
             <% } else if (blog.author === "Abhishek Mohan") { %>
-              <img class="author-image" src="../../images/Abhishek.jpg"><span class="author-name"><%= blog.author %></span>
+              <a href="/team#abhishek" class="author-name"><img class="author-image" src="../../images/Abhishek.jpg"><%= blog.author %></a>
             <% } else if (blog.author === "Prabdeep Dhaliwal") { %>
-              <img class="author-image" src="../../images/Prabdeep.png"><span class="author-name"><%= blog.author %></span>
+              <a href="/team#prab" class="author-name"><img class="author-image" src="../../images/Prabdeep.png"><%= blog.author %></a>
             <% } else { %>
               Author not named
             <% } %>
