@@ -126,6 +126,52 @@ nav {
   cursor: pointer;
 }
 
+.home-page {
+  width: 100%;
+}
+
+.game-container {
+  width: 100%;
+  margin: auto;
+  padding: 30px;
+}
+
+.game-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
+  margin: auto;
+}
+
+.game-display {
+  max-width: 500px;
+  width: 100%;
+}
+
+.game-display iframe,
+.game-display img {
+  border-radius: 10px;
+}
+
+.game-description {
+  max-width: 800px;
+  width: 100%;
+  padding: 10px;
+}
+
+.game-link a {
+  cursor: pointer;
+  color: blue;
+}
+
 .account-section {
   margin: auto;
   text-align: center;
@@ -591,7 +637,7 @@ a.linkedin {
   color: #0e44aa;
 }
 
-a.steam {
+a.game-link {
   color: #0e44aa;
 }
 
@@ -727,6 +773,10 @@ section.image {
 
 #colossalSaga {
   background-color: #eaebba;
+}
+
+#towerDefence {
+  background-color: #ebd2ba;
 }
 
 #easyviewr {
