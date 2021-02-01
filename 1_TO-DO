@@ -1,29 +1,31 @@
-Finish contact page
-Find overall background idea
-Add Steam Icon, LinkedIn, Github
 
-Commit to Github
-
-Make it Mobile Friendly
 
 AB
 { 
   CHANGE "ACCOUNT" TO REGISTER/LOGIN 
   > CHANGE TO ACCOUNT (WITH USERNAME) and ICON indicating it's logged in 
     (refer to top-kicks website on prabdhaliwal.com)
+  > Finish contact page
+  > Find overall background idea
+  > Add Steam Icon, LinkedIn, Github
+  > Make it Mobile Friendly
+
+  >MAKE ICON BESIDE NAVIGATION back
+  >MAKE CONTACTS AND PRIVACY PAGE
+  >LEARN NPM, EXPRESS, MONGODB
+  -----------------------
+
+  CRUD Operations
+  Data Validation
+  Authentication and Authorization
+  Handling and Loggin Errors
+
+------------------------------------------
+  Icon beside Navigation Bar
+  Privacy Policy Page
 }
 
 PRAB
 {
   ADD IN YOUR APPS
-  - create login and register pages ✅
-  - user validation and authentication (login/registration)✅
-  - display error messages for user feedback✅
-  - welcome message for user once they login✅
-  - create logout functionality and button ✅
-  - hide error message button functionality ✅
-  - maintain form data after validation error
-  - create blog routes (CRUD) ex. create, view, edit, delete blogs ✅
-  - allow only admins to create, edit and delete blogs✅
-  - fix bug with creating/editting blogs (blogs do not get created...)
 }
