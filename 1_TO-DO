@@ -1,21 +1,34 @@
-Finish contact page
-Find overall background idea
-Add Steam Icon, LinkedIn, Github
 
-Commit to Github
-
-Make it Mobile Friendly
 
 AB
 { 
   CHANGE "ACCOUNT" TO REGISTER/LOGIN 
   > CHANGE TO ACCOUNT (WITH USERNAME) and ICON indicating it's logged in 
     (refer to top-kicks website on prabdhaliwal.com)
+  > Finish contact page
+  > Find overall background idea
+  > Add Steam Icon, LinkedIn, Github
+  > Make it Mobile Friendly
+
+  >MAKE ICON BESIDE NAVIGATION back
+  >MAKE CONTACTS AND PRIVACY PAGE
+  >LEARN NPM, EXPRESS, MONGODB
+  -----------------------
+
+  CRUD Operations
+  Data Validation
+  Authentication and Authorization
+  Handling and Loggin Errors
+
+------------------------------------------
+  Icon beside Navigation Bar
+  Privacy Policy Page
 }
 
 PRAB
 {
   ADD IN YOUR APPS
+<<<<<<< HEAD
   - create login and register pages ✅
   - user validation and authentication (login/registration)✅
   - display error messages for user feedback✅
@@ -33,4 +46,6 @@ PRAB
 
   - create admin and user accounts rather than just user (future)
   - account rank system? (future)
+=======
+>>>>>>> abs-branch
 }

@@ -10,7 +10,7 @@
   <div>
     <!-- TOP NAVIGATION BAR -->
     <%- include('../partials/_navbar.ejs') %>
-    <br><br><br><br><br>
+    <br><br><br><br>
     <!-- HEADER -->
     <div class="welcome">
       <h2>Paraverse  Blog</h2>
@@ -18,6 +18,7 @@
       <hr class="welcome"><br>
     </div>
     
+<<<<<<< HEAD
     <section class="blogs-section">
       <div class="view-blog-btns-container">
         <a href="/blogs" class="a-btn articles-btn">All Articles</a>
@@ -44,6 +45,24 @@
         <%- blog.sanitizedHtml %>
       </div>
     </section>
+=======
+    <div class="container">
+      <div>
+        <div class="btn-container">
+          <a href="/blogs" class="linkedin">All-Articles</a>
+          <a href="/blogs/edit/<%= blog.id %>" class="website">Edit</a>
+        </div>
+        <h4 class="title"><%= blog.title %></h4>
+        <div class="date-text-article">
+          <%= blog.createdAt.toLocaleDateString() %>
+        </div>
+        <div class="article-text">
+          <%- blog.sanitizedHtml %>
+        </div>
+      </div>
+      <br><br><br>
+    </div>
+>>>>>>> abs-branch
     
     <!-- FOOTER  -->
     <%- include('../partials/_footer.ejs') %>

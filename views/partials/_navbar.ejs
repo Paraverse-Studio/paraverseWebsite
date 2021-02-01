@@ -1,23 +1,30 @@
 <nav>
-  <ul class="nav-links">
-    <li><a href="/home" class="nav-link">GAMES</a></li>
-    <li><a href="/apps" class="nav-link">APPS</a></li>
-    <li><a href="/team" class="nav-link">TEAM</a></li>
-    <li><a href="/blogs" class="nav-link">BLOG</a></li>
-    <li><a href="/play" class="nav-link">PLAY</a></li>
-  </ul>
   
-  <% if (user == null || user == undefined) { %>
-    <!-- This div displays when user is NOT logged in -->
-    <div class="logged-out-links">
-      <a href="/account/login" class="account-link">Login</a>
-      <a href="/account/register" class="account-link">Register</a>
+  <!-- ul class='nav-links' -->
+  <ul> 
+    <div class="nav-background"></div>
+      <!-- a class="nav-link" -->
+      <li><a href="/home">GAMES</a></li>
+      <li><a href="/apps">APPS</a></li>
+      <li><a href="/team">TEAM</a></li>
+      <li><a href="/blogs">BLOG</a></li>
+      <li><a href="/account">ACCOUNT</a></li>
+      <li><strong><a class="play" href="/play">PLAY</a></strong></li>
     </div>
-    <% } else { %>
-      <!-- This div displays when user HAS logged in -->
-    <div class="logged-in-links">
-      <a href="/account" class="account-link">Account</a>
-      <a href="/account/logout" class="hyperlink">Logout</a>
-    </div>
-    <% } %>
+  
+    <% if (user == null || user == undefined) { %>
+      <!-- This div displays when user is NOT logged in -->
+      <!-- <div class="logged-out-links">
+        <a href="/account/login" class="account-link">Login</a>
+        <a href="/account/register" class="account-link">Register</a>
+      </div> -->
+      <% } else { %>
+        <!-- This div displays when user HAS logged in -->
+      <!-- <div class="logged-in-links">
+        <a href="/account" class="account-link">Account</a>
+        <a href="/account/logout" class="hyperlink">Logout</a>
+      </div> -->
+      <% } %>
+  </ul>
+
 </nav>

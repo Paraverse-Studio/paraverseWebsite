@@ -8,13 +8,14 @@
 <body>
   <!-- TOP NAVIGATION BAR -->
   <%- include('../partials/_navbar.ejs') %>
-  <br><br><br><br><br>
+  <br><br><br><br>
   <!-- HEADER -->
   <div class="welcome">
       <h2>Paraverse  Blog</h2>
       <section>Stay up to date with Paraverse Studio. View all our latest blogs here.</section><br>
       <hr class="welcome"><br>
   </div>
+<<<<<<< HEAD
 
   <section class="blogs-section">
     <% if (user != null || user != undefined) { %> 
@@ -47,10 +48,33 @@
             <button type="submit" class="btn del-btn">Delete</button>
           </form>
           <% } %> 
+=======
+  <div class="container">
+    <section class="blogs-section">
+      <% if (user != null || user != undefined) { %> 
+      <a href="/blogs/new" class="a-btn new-blog-btn">New Blog</a>
+      <% } %> 
+      <% blogs.forEach(blog => { %>
+        <div class="blog-container">
+          <div>
+            <h4><a href="/blogs/<%= blog.slug %>" class="blog-title-link"><%= blog.title %></a></h4>
+            <div class="blog-date-text"><%= blog.createdAt.toLocaleDateString() %></div>
+            <div class="blog-description-text"><%= blog.description %></div>
+          </div>
+          <div class="blog-btns-container">
+            <% if (user != null || user != undefined) { %> 
+            <a href="/blogs/edit/<%= blog.id %>" class="a-btn edit-btn">Edit</a>
+            <form action="/blogs/<%= blog.id %>?_method=DELETE" method="POST">
+              <button type="submit" class="btn del-btn">Delete</button>
+            </form>
+            <% } %> 
+          </div>
+>>>>>>> abs-branch
         </div>
-      </div>
-    <% }) %>
-    </section>
+      <% }) %>
+      </section>
+      <br><br>
+    </div>
 
   <!-- FOOTER  -->
   <%- include('../partials/_footer.ejs') %>

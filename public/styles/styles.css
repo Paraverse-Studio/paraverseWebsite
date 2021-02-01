@@ -6,12 +6,19 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  background: #e2e2e2;
+  color: #444;
+  margin: 0px 10px;
 }
 
 button {
+<<<<<<< HEAD
   font-family: 'Roboto', sans-serif;
   cursor: pointer;
+=======
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+>>>>>>> abs-branch
 }
 
 :root {
@@ -45,13 +52,78 @@ button {
   font-size: var(--hugeFont);
 }
 
-nav {
+/* nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   height: var(--navHeight);
   padding: 5px;
+} */
+
+ /* 
+    1) NAVIGATION BAR ------------------------
+ */
+
+ nav ul div.nav-background{
+  background: white;
+  padding: 20px;
+  box-shadow: 0px 0px 1px 0px black;
+  width: 35%;
+  position: absolute;
+  z-index: -1;
 }
+nav ul{
+  white-space: nowrap;
+  margin: auto;
+  text-align: center;
+  width: 35%;
+}
+nav li{
+  width: 16%;
+  display: inline-block;
+  font-size: 12px;
+  color: #555;
+  margin-top: 2%;
+  
+}
+/* 
+  2) HEADER ------------------------
+*/
+div.transition-heading{
+  text-align:center;
+  font-size: 24px;
+  color: #444;
+  padding: 50px;
+}
+#transition-head{
+  padding: 30px;
+}
+ /* 
+    3) BODY ------------------------
+ */
+ body{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  background: #e2e2e2;
+  color: #444;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+body h1{
+  padding: 6px 12px;
+  font-size: 22px;
+  text-align: center;
+}
+hr{
+  display:block;
+  border-top: 1px solid rgb(194, 194, 194); 
+}
+hr.welcome{
+  width: 50%;
+  display:block;
+  margin: 0 auto;
+  border-top: 1px solid rgb(194, 194, 194);
+}
+/* ---------------------------------- */
 
 .nav-links {
   width: 60%;
@@ -83,7 +155,7 @@ nav {
   opacity: 0.5;
 }
 
-.logged-out-links {
+/* .logged-out-links {
   width: 170px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -103,7 +175,7 @@ nav {
           flex-direction: column;
   height: var(--navHeight);
   margin: auto 0;
-}
+} */
 
 .account-link {
   width: 80px;
@@ -141,9 +213,9 @@ form.account-form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 20px auto;
-  padding: 50px;
-  border: 2px solid var(--primaryColor);
+  margin: auto;
+  padding: 10px;
+  /* border: 2px solid var(--primaryColor); */
 }
 
 form.account-form label {
@@ -155,20 +227,21 @@ form.account-form input {
   border: 0;
   outline: 0;
   padding: 10px;
-  border-bottom: 1px solid var(--primaryColor);
+  /* border-bottom: 1px solid var(--primaryColor); */
   background-color: #eee;
-  cursor: pointer;
+  cursor:default;
 }
 
 form.account-form input[type='text'],
 form.account-form input[type='password'],
+form.account-form input[type='email'],
 form.account-form input[type='placeholder'] {
   font-size: 1rem;
 }
 
 form.account-form input:hover,
 form.account-form input:focus {
-  border-bottom: 2px solid var(--primaryColor);
+  /* border-bottom: 2px solid var(--primaryColor); */
   opacity: 0.8;
 }
 
@@ -177,11 +250,12 @@ form.account-form input:invalid {
 }
 
 form.account-form .account-button {
-  margin-top: 40px;
   padding: var(--smallBtnPadding);
   background-color: var(--purpleColor);
+  width: 50%;
   color: white;
-  cursor: pointer;
+  margin: 40px auto;
+  /* cursor: pointer; */
 }
 
 .user-profile {
@@ -560,9 +634,14 @@ footer li {
   list-style: none;
 }
 
+h4.title{
+  text-align: center;
+  font-size:var(--largeFont);
+}
+
 .a-btn {
   padding: 10px;
-  border-radius: var(--borderRadius);
+  /* border-radius: var(--borderRadius); */
   text-decoration: none;
   text-align: center;
   cursor: pointer;
@@ -572,7 +651,7 @@ footer li {
   outline: 0;
   border: 0;
   padding: 10px;
-  border-radius: var(--borderRadius);
+  /* border-radius: var(--borderRadius); */
   font-size: 1rem;
   text-align: center;
   cursor: pointer;
@@ -601,6 +680,18 @@ a.website {
 
 a.github {
   color: #ad33ff;
+}
+
+a.btn-register{
+  /* margin-top: 15px; */
+  /* padding: var(--smallBtnPadding); */
+  margin: 10px;
+  /* background-color: var(--purpleColor); */
+  /* color: white; */
+}
+
+a.btn-logout{
+  color: rgb(228, 107, 107);
 }
 
 a:link {
@@ -638,6 +729,10 @@ a:hover.github {
   color: #b383ff;
 }
 
+a:hover.btn-logout{
+  color: rgb(221, 177, 177);
+}
+
 a:active {
   text-decoration: none;
 }
@@ -657,10 +752,16 @@ div.welcome h2 {
   font-size: var(--hugeFont);
   padding-top: 30px;
   padding-bottom: 10px;
+  margin-top: 15px;
 }
 
 div.welcome section {
+<<<<<<< HEAD
   font-size: var(--regularFont);
+=======
+  font-size: 15px;
+  padding: 20px;
+>>>>>>> abs-branch
 }
 
 div.container {
@@ -676,6 +777,42 @@ div.content {
   display: -ms-flexbox;
   display: flex;
 }
+div.content-policy {
+  padding: 5px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 3%;
+  font-size: 14px;
+  margin: 0 auto;
+}
+div.content-policy p {
+  padding: 10px; 
+  margin: 10px auto;
+}
+div.content-policy ul{
+  padding: 5px;
+  margin: 10px auto;
+}
+div.content-policy li{
+  padding: 5px;
+}
+div.date-text-article{
+  text-align: center;
+  font-weight: 300;
+  margin: 10px 0 15px 0;
+  font-style: italic;
+  color: var(--complementaryColor);
+}
+
+div.article-text{
+  margin: auto 300px;
+}
+
+div.btn-container{
+  text-align: center;
+  padding-bottom: 20px;
+  word-spacing: 20px;
+}
 
 /* 
   6) <section> TAGS ------------------------
@@ -683,6 +820,10 @@ div.content {
 section.text {
   width: 40%;
   position: relative;
+}
+
+section.text hr{
+  margin: 10px auto;
 }
 
 section.text div.links {
@@ -718,6 +859,19 @@ section.image {
   text-align: center;
 }
 
+section.left-logo{
+  display: inline-block;
+  position: absolute;
+  left: 2%;
+  top: 4%;
+}
+section.right-logo{
+  display: inline-block;
+  position: absolute;
+  right: 1%;
+  top: 5%;
+}
+
 /* 
   7) #id ------------------------
 */
@@ -749,7 +903,32 @@ section.image {
   background-color: #dee9d9;
 }
 
+#containerLogin{
+  padding: 10px;
+}
+
 .hide {
   display: none;
 }
 /*# sourceMappingURL=styles.css.map */
+ /* 
+    8) FOOTER ------------------------
+ */
+ footer{
+  text-align:center;
+  padding: 50px;
+  white-space: nowrap;
+  margin: auto;
+  width: 50%;
+  font-size: 12px;
+
+}
+footer li{
+  width: 12%;
+  display: inline-block;
+  color: #555;
+  padding: 10px;
+}
+footer p{
+  padding: 20px;
+}
