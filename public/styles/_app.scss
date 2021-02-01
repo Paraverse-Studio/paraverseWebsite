@@ -17,8 +17,8 @@
 }
 
 .app-display {
-  max-width: 500px;
   width: 100%;
+  max-width: 500px;
 }
 
 .app-display iframe,
@@ -30,9 +30,17 @@
   max-width: 800px;
   width: 100%;
   padding: 10px;
+  line-height: 1.4rem;
+  h2 {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
 }
 
 .app-link {
-  cursor: pointer;
-  color: blue;
+  margin-top: 20px;
+  a {
+    cursor: pointer;
+    color: blue;
+  }
 }

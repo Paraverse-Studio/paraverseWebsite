@@ -54,3 +54,27 @@ button {
 .hide {
   display: none;
 }
+
+@media screen and (max-width: 1300px) {
+  .game-content,
+  .app-content,
+  .team-content {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .game-content,
+  .app-content,
+  .team-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .game-links,
+  .app-links,
+  .team-links {
+    margin: 20px auto 0 auto;
+    justify-content: space-evenly;
+  }
+}

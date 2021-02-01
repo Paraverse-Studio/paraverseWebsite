@@ -166,6 +166,16 @@ nav {
   max-width: 800px;
   width: 100%;
   padding: 10px;
+  line-height: 1.4rem;
+}
+
+.game-description h2 {
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+.game-link {
+  margin-top: 20px;
 }
 
 .game-link a {
@@ -199,8 +209,8 @@ nav {
 }
 
 .app-display {
-  max-width: 500px;
   width: 100%;
+  max-width: 500px;
 }
 
 .app-display iframe,
@@ -212,9 +222,19 @@ nav {
   max-width: 800px;
   width: 100%;
   padding: 10px;
+  line-height: 1.4rem;
+}
+
+.app-description h2 {
+  font-size: 2rem;
+  line-height: 2rem;
 }
 
 .app-link {
+  margin-top: 20px;
+}
+
+.app-link a {
   cursor: pointer;
   color: blue;
 }
@@ -244,7 +264,13 @@ nav {
   margin: auto;
 }
 
+.team-display {
+  width: 100%;
+  max-width: 500px;
+}
+
 .team-display img {
+  width: 100%;
   border-radius: 10px;
 }
 
@@ -252,11 +278,30 @@ nav {
   max-width: 800px;
   width: 100%;
   padding: 10px;
+  line-height: 1.4rem;
+}
+
+.team-description h2 {
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+.team-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 300px;
+  margin-top: 20px;
 }
 
 .team-links a {
   cursor: pointer;
   color: blue;
+  margin-right: 20px;
 }
 
 .account-section {
@@ -811,38 +856,6 @@ div.content {
 }
 
 /* 
-  6) <section> TAGS ------------------------
-*/
-section.text div.links {
-  word-spacing: 50px;
-}
-
-section h2 {
-  -webkit-text-decoration: bold;
-          text-decoration: bold;
-  font-size: 36px;
-  margin: 0px;
-}
-
-section.video {
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
-  height: 50%;
-  left: 10%;
-  position: relative;
-  text-align: center;
-}
-
-section.image {
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
-  left: 5%;
-  opacity: 20%;
-  position: relative;
-  text-align: center;
-}
-
-/* 
   7) #id ------------------------
 */
 #ozoneGuardian {
@@ -891,5 +904,36 @@ section.image {
 
 .hide {
   display: none;
+}
+
+@media screen and (max-width: 1300px) {
+  .game-content,
+  .app-content,
+  .team-content {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .game-content,
+  .app-content,
+  .team-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .game-links,
+  .app-links,
+  .team-links {
+    margin: 20px auto 0 auto;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

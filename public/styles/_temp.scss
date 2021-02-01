@@ -74,31 +74,6 @@ div.content {
   display: flex;
 }
 /* 
-  6) <section> TAGS ------------------------
-*/
-section.text div.links {
-  word-spacing: 50px;
-}
-section h2 {
-  text-decoration: bold;
-  font-size: 36px;
-  margin: 0px;
-}
-section.video {
-  flex-basis: 50%;
-  height: 50%;
-  left: 10%;
-  position: relative;
-  text-align: center;
-}
-section.image {
-  flex-basis: 50%;
-  left: 5%;
-  opacity: 20%;
-  position: relative;
-  text-align: center;
-}
-/* 
   7) #id ------------------------
 */
 #ozoneGuardian {

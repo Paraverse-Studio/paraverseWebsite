@@ -16,17 +16,34 @@
   margin: auto;
 }
 
-.team-display img {
-  border-radius: 10px;
+.team-display {
+  width: 100%;
+  max-width: 500px;
+  img {
+    width: 100%;
+    border-radius: 10px;
+  }
 }
 
 .team-description {
   max-width: 800px;
   width: 100%;
   padding: 10px;
+  line-height: 1.4rem;
+  h2 {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
 }
 
-.team-links a {
-  cursor: pointer;
-  color: blue;
+.team-links {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  margin-top: 20px;
+  a {
+    cursor: pointer;
+    color: blue;
+    margin-right: 20px;
+  }
 }
