@@ -76,10 +76,6 @@ div.content {
 /* 
   6) <section> TAGS ------------------------
 */
-section.text {
-  width: 40%;
-  position: relative;
-}
 section.text div.links {
   word-spacing: 50px;
 }
@@ -94,9 +90,6 @@ section.video {
   left: 10%;
   position: relative;
   text-align: center;
-}
-section.video iframe {
-  border-radius: 10px;
 }
 section.image {
   flex-basis: 50%;
@@ -117,11 +110,20 @@ section.image {
 #towerDefence {
   background-color: rgb(235, 210, 186);
 }
+#easybillr {
+  background-color: rgb(186, 193, 235);
+}
 #easyviewr {
+  background-color: rgb(235, 210, 186);
+}
+#basketballScoreApp {
   background-color: rgb(186, 232, 235);
 }
-#easybillr {
+#todoListApp {
   background-color: rgb(178, 205, 240);
+}
+#weatherApp {
+  background-color: rgb(234, 235, 186);
 }
 #abhinav {
   background-color: rgb(235, 210, 186);

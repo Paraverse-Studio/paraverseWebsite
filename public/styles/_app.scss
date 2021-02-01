@@ -1,14 +1,14 @@
-.home-page {
+.app-page {
   width: 100%;
 }
 
-.game-container {
+.app-container {
   width: 100%;
   margin: auto;
   padding: 30px;
 }
 
-.game-content {
+.app-content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -16,24 +16,23 @@
   margin: auto;
 }
 
-.game-display {
+.app-display {
   max-width: 500px;
   width: 100%;
 }
 
-.game-display iframe,
-.game-display img {
-  width: 100%;
+.app-display iframe,
+.app-display img {
   border-radius: 10px;
 }
 
-.game-description {
+.app-description {
   max-width: 800px;
   width: 100%;
   padding: 10px;
 }
 
-.game-link a {
+.app-link {
   cursor: pointer;
   color: blue;
 }

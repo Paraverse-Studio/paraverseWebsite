@@ -158,6 +158,7 @@ nav {
 
 .game-display iframe,
 .game-display img {
+  width: 100%;
   border-radius: 10px;
 }
 
@@ -168,6 +169,92 @@ nav {
 }
 
 .game-link a {
+  cursor: pointer;
+  color: blue;
+}
+
+.app-page {
+  width: 100%;
+}
+
+.app-container {
+  width: 100%;
+  margin: auto;
+  padding: 30px;
+}
+
+.app-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
+  margin: auto;
+}
+
+.app-display {
+  max-width: 500px;
+  width: 100%;
+}
+
+.app-display iframe,
+.app-display img {
+  border-radius: 10px;
+}
+
+.app-description {
+  max-width: 800px;
+  width: 100%;
+  padding: 10px;
+}
+
+.app-link {
+  cursor: pointer;
+  color: blue;
+}
+
+.team-page {
+  width: 100%;
+}
+
+.team-container {
+  width: 100%;
+  margin: auto;
+  padding: 30px;
+}
+
+.team-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
+  margin: auto;
+}
+
+.team-display img {
+  border-radius: 10px;
+}
+
+.team-description {
+  max-width: 800px;
+  width: 100%;
+  padding: 10px;
+}
+
+.team-links a {
   cursor: pointer;
   color: blue;
 }
@@ -726,11 +813,6 @@ div.content {
 /* 
   6) <section> TAGS ------------------------
 */
-section.text {
-  width: 40%;
-  position: relative;
-}
-
 section.text div.links {
   word-spacing: 50px;
 }
@@ -749,10 +831,6 @@ section.video {
   left: 10%;
   position: relative;
   text-align: center;
-}
-
-section.video iframe {
-  border-radius: 10px;
 }
 
 section.image {
@@ -779,12 +857,24 @@ section.image {
   background-color: #ebd2ba;
 }
 
+#easybillr {
+  background-color: #bac1eb;
+}
+
 #easyviewr {
+  background-color: #ebd2ba;
+}
+
+#basketballScoreApp {
   background-color: #bae8eb;
 }
 
-#easybillr {
+#todoListApp {
   background-color: #b2cdf0;
+}
+
+#weatherApp {
+  background-color: #eaebba;
 }
 
 #abhinav {

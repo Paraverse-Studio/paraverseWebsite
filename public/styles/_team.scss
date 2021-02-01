@@ -1,14 +1,14 @@
-.home-page {
+.team-page {
   width: 100%;
 }
 
-.game-container {
+.team-container {
   width: 100%;
   margin: auto;
   padding: 30px;
 }
 
-.game-content {
+.team-content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -16,24 +16,17 @@
   margin: auto;
 }
 
-.game-display {
-  max-width: 500px;
-  width: 100%;
-}
-
-.game-display iframe,
-.game-display img {
-  width: 100%;
+.team-display img {
   border-radius: 10px;
 }
 
-.game-description {
+.team-description {
   max-width: 800px;
   width: 100%;
   padding: 10px;
 }
 
-.game-link a {
+.team-links a {
   cursor: pointer;
   color: blue;
 }
