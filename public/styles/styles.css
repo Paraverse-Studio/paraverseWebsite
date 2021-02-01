@@ -500,6 +500,11 @@ footer li {
   list-style: none;
 }
 
+h4.title{
+  text-align: center;
+  font-size:var(--largeFont);
+}
+
 .a-btn {
   padding: 10px;
   /* border-radius: var(--borderRadius); */
@@ -654,6 +659,23 @@ div.content-policy ul{
 }
 div.content-policy li{
   padding: 5px;
+}
+div.date-text-article{
+  text-align: center;
+  font-weight: 300;
+  margin: 10px 0 15px 0;
+  font-style: italic;
+  color: var(--complementaryColor);
+}
+
+div.article-text{
+  margin: auto 300px;
+}
+
+div.btn-container{
+  text-align: center;
+  padding-bottom: 20px;
+  word-spacing: 20px;
 }
 
 /* 

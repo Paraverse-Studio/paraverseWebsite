@@ -18,19 +18,21 @@
       <hr class="welcome"><br>
     </div>
     
-    <div>
-      <h4 class="title"><%= blog.title %></h4>
-      <div class="date-text-article">
-        <%= blog.createdAt.toLocaleDateString() %>
+    <div class="container">
+      <div>
+        <div class="btn-container">
+          <a href="/blogs" class="linkedin">All-Articles</a>
+          <a href="/blogs/edit/<%= blog.id %>" class="website">Edit</a>
+        </div>
+        <h4 class="title"><%= blog.title %></h4>
+        <div class="date-text-article">
+          <%= blog.createdAt.toLocaleDateString() %>
+        </div>
+        <div class="article-text">
+          <%- blog.sanitizedHtml %>
+        </div>
       </div>
-      <div class="btn-container">
-        <a href="/blogs" class="a-btn grey">All Articles</a>
-        <a href="/blogs/edit/<%= blog.id %>" class="a-btn blue">Edit</a>
-      </div>
-      <div class="article-text">
-        <%- blog.sanitizedHtml %>
-      </div>
-  
+      <br><br><br>
     </div>
     
     <!-- FOOTER  -->
