@@ -4,6 +4,12 @@ const closeErrorButtons = document.querySelectorAll('.error-button');
 const navMenuBtn = document.getElementById('navMenuBtn');
 const navMenuLinks = document.querySelectorAll('.menu-link');
 const navMenuWindow = document.querySelector('.nav-menu-window');
+
+// close nav menu window
+const closeMenuWindow = () => {
+  navMenuWindow.classList.remove('open-menu');
+};
+
 // max-width for menu button
 let x = window.matchMedia('(max-width: 1000px)');
 
@@ -36,8 +42,3 @@ navMenuLinks.forEach((navLink) => {
     closeMenuWindow();
   });
 });
-
-// close nav menu window
-const closeMenuWindow = () => {
-  navMenuWindow.classList.remove('open-menu');
-};

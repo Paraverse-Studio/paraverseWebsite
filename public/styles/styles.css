@@ -6,7 +6,10 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: #e2e2e2;
+  color: #444;
+  margin: 0 10px;
 }
 
 button {
@@ -53,14 +56,17 @@ nav {
 }
 
 .nav-links {
-  width: 60%;
+  background-color: white;
+  width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  height: var(--navHeight);
   margin: auto;
+  padding: 10px;
+  -webkit-box-shadow: 0.5px 0.5px 2px #686868, -0.5px -0.5px 2px #686868;
+          box-shadow: 0.5px 0.5px 2px #686868, -0.5px -0.5px 2px #686868;
   list-style: none;
 }
 
@@ -80,49 +86,6 @@ nav {
 
 .nav-link:hover {
   opacity: 0.5;
-}
-
-.logged-out-links {
-  width: 170px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: var(--navHeight);
-  margin: auto 0;
-}
-
-.logged-in-links {
-  width: 100px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: var(--navHeight);
-  margin: auto 0;
-}
-
-.account-link {
-  width: 80px;
-  margin: auto;
-  color: white;
-  background-color: #8a2be2;
-  border-radius: var(--borderRadius);
-  padding: var(--smallBtnPadding);
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.hyperlink {
-  width: 70px;
-  margin: auto;
-  color: black;
-  padding: var(--smallBtnPadding);
-  text-align: center;
-  cursor: pointer;
 }
 
 .menu-btn {
@@ -164,8 +127,8 @@ nav {
   list-style: none;
   background-color: #8a2be2;
   color: white;
-  clip-path: circle(100px at 100% -15%);
-  -webkit-clip-path: circle(100px at 100% -15%);
+  clip-path: circle(100px at 100% -25%);
+  -webkit-clip-path: circle(100px at 100% -25%);
   -webkit-transition-property: top, left, -webkit-clip-path;
   transition-property: top, left, -webkit-clip-path;
   transition-property: top, left, clip-path;
@@ -189,6 +152,7 @@ nav {
 .nav-menu-window li a {
   padding: 20px;
   color: white;
+  margin: auto;
 }
 
 .nav-menu-window .menu-link:nth-of-type(0) {
@@ -329,6 +293,39 @@ nav {
 .game-link a {
   cursor: pointer;
   color: blue;
+}
+
+.logo-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 10px;
+}
+
+.left-logo {
+  width: 25%;
+}
+
+.left-logo img {
+  max-width: 400px;
+  width: 100%;
+}
+
+.right-logo {
+  width: 25%;
+}
+
+.right-logo img {
+  max-width: 400px;
+  width: 100%;
 }
 
 .app-page {
@@ -814,7 +811,7 @@ form.account-form .account-button {
 
 footer {
   text-align: center;
-  padding: 50px;
+  padding: 50px 0;
   white-space: nowrap;
   margin: auto;
   width: 50%;
@@ -910,6 +907,69 @@ footer li {
   cursor: pointer;
 }
 
+nav ul div.nav-background {
+  background: white;
+  padding: 11px 0px;
+  -webkit-box-shadow: 0px 0px 1px 0px black;
+          box-shadow: 0px 0px 1px 0px black;
+  text-align: center;
+  width: 34%;
+  left: 33%;
+  position: absolute;
+}
+
+nav ul {
+  white-space: nowrap;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+nav li {
+  width: 16%;
+  display: inline-block;
+  font-size: 12px;
+  color: #555;
+}
+
+/* 
+  2) HEADER ------------------------
+*/
+div.transition-heading {
+  text-align: center;
+  font-size: 24px;
+  color: #444;
+  padding: 50px;
+}
+
+#transition-head {
+  padding: 30px;
+}
+
+/* 
+  3) BODY ------------------------
+*/
+body h1 {
+  padding: 6px 12px;
+  font-size: 22px;
+  text-align: center;
+}
+
+hr {
+  display: block;
+  border-top: 1px solid #c2c2c2;
+}
+
+hr.welcome {
+  width: 50%;
+  display: block;
+  margin: auto;
+  border-top: 1px solid #c2c2c2;
+}
+
+/* 
+  4) <a> TAGS ------------------------
+*/
 a {
   color: #555;
 }
@@ -923,7 +983,7 @@ a.linkedin {
   color: #0e44aa;
 }
 
-a.game-link {
+a.steam {
   color: #0e44aa;
 }
 
@@ -943,8 +1003,7 @@ a:visited {
   text-decoration: none;
 }
 
-a:hover,
-button:hover {
+a:hover {
   text-decoration: underline;
   color: #afafaf;
 }
@@ -983,16 +1042,13 @@ div.welcome {
   padding: 5px;
   -webkit-box-shadow: 0px 0px 1px 0px #959595;
           box-shadow: 0px 0px 1px 0px #959595;
+  background-color: white;
 }
 
 div.welcome h2 {
-  font-size: var(--hugeFont);
+  font-size: var(--largeFont);
   padding-top: 30px;
   padding-bottom: 10px;
-}
-
-div.welcome section {
-  font-size: var(--regularFont);
 }
 
 div.container {
@@ -1007,6 +1063,14 @@ div.content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+div.content-policy {
+  padding: 5px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 3%;
+  font-size: 14px;
 }
 
 /* 
@@ -1025,15 +1089,15 @@ div.content {
 }
 
 #easybillr {
-  background-color: #bac1eb;
+  background-color: #b2cdf0;
 }
 
 #easyviewr {
-  background-color: #ebd2ba;
+  background-color: #bae8eb;
 }
 
 #basketballScoreApp {
-  background-color: #bae8eb;
+  background-color: #ebd2ba;
 }
 
 #todoListApp {
@@ -1056,6 +1120,9 @@ div.content {
   background-color: #dee9d9;
 }
 
+/* 
+  8) FOOTER ------------------------
+*/
 .hide {
   display: none;
 }
@@ -1086,9 +1153,30 @@ div.content {
     display: -ms-flexbox;
     display: flex;
   }
+  .left-logo {
+    width: 25%;
+  }
+  .left-logo img {
+    max-height: 400px;
+    width: 100%;
+  }
+  .right-logo {
+    width: 25%;
+  }
+  .right-logo img {
+    max-width: 400px;
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 800px) {
+  .logo-container {
+    padding: 0 50px;
+  }
+  .logo-container .right-logo,
+  .logo-container .left-logo {
+    min-width: 150px;
+  }
   .game-content,
   .app-content,
   .team-content {
@@ -1108,6 +1196,16 @@ div.content {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .logo-container {
+    padding: 0 10px;
+  }
+  .logo-container .right-logo,
+  .logo-container .left-logo {
+    min-width: 100px;
   }
 }
 /*# sourceMappingURL=styles.css.map */

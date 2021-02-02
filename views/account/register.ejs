@@ -8,13 +8,17 @@
   <body>
     <!-- TOP NAVIGATION BAR -->
     <%- include('../partials/_navbar.ejs') %>
-    <br><br><br><br><br>
+    <br><br><br><br>
     <!-- HEADER -->
-    <hr class="welcome"><br>
+      <div class="welcome">
+        <h2 class="page-title">Paraverse Registration</h2>
+        <section>Admin registration only.</section><br>
+        <hr class="welcome">
+        <div class="transition-heading" id="transition-head"><strong>Registration</strong></div>
+      </div>
+    <!-- HEADER -->
     <section class="account-section">
-      <h2 class="page-title">Register</h2>
       <form class="account-form" method="POST" action="/account/register">
-        Admin Registration Only
         <%- include('../partials/messages.ejs')%>
         <label>First Name</label>
         <input type="text" name="firstName" id="firstName" placeholder="First Name" />

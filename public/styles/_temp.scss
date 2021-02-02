@@ -1,3 +1,57 @@
+nav ul div.nav-background {
+  background: white;
+  padding: 11px 0px;
+  box-shadow: 0px 0px 1px 0px black;
+  text-align: center;
+  width: 34%;
+  left: 33%;
+  position: absolute;
+}
+nav ul {
+  white-space: nowrap;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+nav li {
+  width: 16%;
+  display: inline-block;
+  font-size: 12px;
+  color: #555;
+}
+/* 
+  2) HEADER ------------------------
+*/
+div.transition-heading {
+  text-align: center;
+  font-size: 24px;
+  color: #444;
+  padding: 50px;
+}
+#transition-head {
+  padding: 30px;
+}
+/* 
+  3) BODY ------------------------
+*/
+body h1 {
+  padding: 6px 12px;
+  font-size: 22px;
+  text-align: center;
+}
+hr {
+  display: block;
+  border-top: 1px solid rgb(194, 194, 194);
+}
+hr.welcome {
+  width: 50%;
+  display: block;
+  margin: auto;
+  border-top: 1px solid rgb(194, 194, 194);
+}
+/* 
+  4) <a> TAGS ------------------------
+*/
 a {
   color: #555;
 }
@@ -8,7 +62,8 @@ a.play {
 a.linkedin {
   color: rgb(14, 68, 170);
 }
-a.game-link {
+
+a.steam {
   color: rgb(14, 68, 170);
 }
 a.website {
@@ -23,8 +78,7 @@ a:link {
 a:visited {
   text-decoration: none;
 }
-a:hover,
-button:hover {
+a:hover {
   text-decoration: underline;
   color: rgb(175, 175, 175);
 }
@@ -55,14 +109,12 @@ div.welcome {
   text-align: center;
   padding: 5px;
   box-shadow: 0px 0px 1px 0px rgb(149, 149, 149);
+  background-color: white;
 }
 div.welcome h2 {
-  font-size: var(--hugeFont);
+  font-size: var(--largeFont);
   padding-top: 30px;
   padding-bottom: 10px;
-}
-div.welcome section {
-  font-size: var(--regularFont);
 }
 div.container {
   background: white;
@@ -72,6 +124,13 @@ div.content {
   padding-top: 50px;
   padding-bottom: 50px;
   display: flex;
+}
+div.content-policy {
+  padding: 5px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 3%;
+  font-size: 14px;
 }
 /* 
   7) #id ------------------------
@@ -86,13 +145,13 @@ div.content {
   background-color: rgb(235, 210, 186);
 }
 #easybillr {
-  background-color: rgb(186, 193, 235);
+  background-color: rgb(178, 205, 240);
 }
 #easyviewr {
-  background-color: rgb(235, 210, 186);
+  background-color: rgb(186, 232, 235);
 }
 #basketballScoreApp {
-  background-color: rgb(186, 232, 235);
+  background-color: rgb(235, 210, 186);
 }
 #todoListApp {
   background-color: rgb(178, 205, 240);
@@ -109,3 +168,6 @@ div.content {
 #prab {
   background-color: rgb(222, 233, 217);
 }
+/* 
+  8) FOOTER ------------------------
+*/

@@ -5,7 +5,10 @@
 }
 //########################################### General Tag Styling Here ###########################################//
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: #e2e2e2;
+  color: #444;
+  margin: 0 10px;
 }
 
 button {
@@ -77,9 +80,31 @@ button {
   .menu-btn {
     display: flex;
   }
+
+  .left-logo {
+    width: 25%;
+    img {
+      max-height: 400px;
+      width: 100%;
+    }
+  }
+  .right-logo {
+    width: 25%;
+    img {
+      max-width: 400px;
+      width: 100%;
+    }
+  }
 }
 
 @media screen and (max-width: 800px) {
+  .logo-container {
+    padding: 0 50px;
+    .right-logo,
+    .left-logo {
+      min-width: 150px;
+    }
+  }
   .game-content,
   .app-content,
   .team-content {
@@ -92,5 +117,14 @@ button {
   .team-links {
     margin: 20px auto 0 auto;
     justify-content: space-evenly;
+  }
+}
+@media screen and (max-width: 400px) {
+  .logo-container {
+    padding: 0 10px;
+    .right-logo,
+    .left-logo {
+      min-width: 100px;
+    }
   }
 }

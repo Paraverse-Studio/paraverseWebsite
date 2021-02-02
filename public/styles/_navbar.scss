@@ -4,11 +4,14 @@ nav {
 }
 
 .nav-links {
-  width: 60%;
+  background-color: white;
+  width: 50%;
   display: flex;
   justify-content: space-around;
-  height: var(--navHeight);
   margin: auto;
+  padding: 10px;
+  box-shadow: 0.5px 0.5px 2px rgb(104, 104, 104),
+    -0.5px -0.5px 2px rgb(104, 104, 104);
   list-style: none;
 }
 
@@ -26,42 +29,6 @@ nav {
 
 .nav-link:hover {
   opacity: 0.5;
-}
-
-.logged-out-links {
-  width: 170px;
-  display: flex;
-  height: var(--navHeight);
-  margin: auto 0;
-}
-
-.logged-in-links {
-  width: 100px;
-  display: flex;
-  flex-direction: column;
-  height: var(--navHeight);
-  margin: auto 0;
-}
-
-.account-link {
-  width: 80px;
-  margin: auto;
-  color: white;
-  background-color: #8a2be2;
-  border-radius: var(--borderRadius);
-  padding: var(--smallBtnPadding);
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.hyperlink {
-  width: 70px;
-  margin: auto;
-  color: black;
-  padding: var(--smallBtnPadding);
-  text-align: center;
-  cursor: pointer;
 }
 
 .menu-btn {
@@ -103,10 +70,11 @@ nav {
     a {
       padding: 20px;
       color: white;
+      margin: auto;
     }
   }
-  clip-path: circle(100px at 100% -15%);
-  -webkit-clip-path: circle(100px at 100% -15%);
+  clip-path: circle(100px at 100% -25%);
+  -webkit-clip-path: circle(100px at 100% -25%);
   transition-property: top, left, clip-path;
   transition: 1s ease;
   pointer-events: none;

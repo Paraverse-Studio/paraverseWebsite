@@ -45,3 +45,26 @@
     color: blue;
   }
 }
+
+.logo-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 10px;
+}
+
+.left-logo {
+  width: 25%;
+  img {
+    max-width: 400px;
+    width: 100%;
+  }
+}
+.right-logo {
+  width: 25%;
+  img {
+    max-width: 400px;
+    width: 100%;
+  }
+}
