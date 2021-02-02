@@ -810,6 +810,47 @@ form.account-form .account-button {
   margin: 10px auto;
 }
 
+.contact-page {
+  margin: auto;
+}
+
+.contact-container {
+  max-width: 400px;
+  width: 100%;
+  margin: auto;
+  padding: 20px 0;
+}
+
+.contact-container p {
+  padding: 5px 0;
+}
+
+.icon-containers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80px;
+}
+
+.LinkedIn-icon {
+  width: 30px;
+  height: 30px;
+  background: url(../images/LinkedIn-Icon.jpg) no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+}
+
+.GitHub-icon {
+  width: 30px;
+  height: 30px;
+  background: url(../images/GitHub-Icon.png) no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+}
+
 footer {
   display: -webkit-box;
   display: -ms-flexbox;
