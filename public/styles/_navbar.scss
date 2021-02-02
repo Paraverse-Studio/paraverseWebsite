@@ -1,6 +1,7 @@
 nav {
   display: flex;
   height: var(--navHeight);
+  z-index: 99;
 }
 
 .nav-links {
@@ -57,6 +58,12 @@ nav {
   list-style: none;
   background-color: #8a2be2;
   color: white;
+  z-index: 99;
+  clip-path: circle(100px at 100% -25%);
+  -webkit-clip-path: circle(100px at 100% -25%);
+  transition-property: top, left, clip-path;
+  transition: 1s ease;
+  pointer-events: none;
 
   h2 {
     text-align: center;
@@ -74,11 +81,6 @@ nav {
       text-align: left;
     }
   }
-  clip-path: circle(100px at 100% -25%);
-  -webkit-clip-path: circle(100px at 100% -25%);
-  transition-property: top, left, clip-path;
-  transition: 1s ease;
-  pointer-events: none;
   .menu-link:nth-of-type(0) {
     animation-delay: 0ms;
   }
@@ -103,7 +105,6 @@ nav {
 }
 
 .open-menu {
-  opacity: 1;
   clip-path: circle(3000px at 100% 0%);
   -webkit-clip-path: circle(3000px at 100% 0%);
   pointer-events: all;

@@ -65,6 +65,14 @@ button {
   .team-content {
     width: 100%;
   }
+  .left-logo,
+  .right-logo {
+    top: -1200%;
+    width: 20%;
+    img {
+      max-width: 250px;
+    }
+  }
 }
 
 @media screen and (max-width: 1000px) {
@@ -82,28 +90,19 @@ button {
     display: flex;
   }
 
-  .left-logo {
-    width: 25%;
-    img {
-      max-height: 400px;
-      width: 100%;
-    }
-  }
+  .left-logo,
   .right-logo {
-    width: 25%;
-    img {
-      max-width: 400px;
-      width: 100%;
-    }
+    top: -300%;
+    width: 20%;
   }
 }
 
 @media screen and (max-width: 800px) {
   .logo-container {
-    padding: 0 50px;
     .right-logo,
     .left-logo {
-      min-width: 150px;
+      top: 0%;
+      width: 20%;
     }
   }
   .game-content,
@@ -125,7 +124,7 @@ button {
     padding: 0 10px;
     .right-logo,
     .left-logo {
-      min-width: 100px;
+      width: 20%;
     }
   }
   form.account-form {

@@ -53,6 +53,7 @@ nav {
   display: -ms-flexbox;
   display: flex;
   height: var(--navHeight);
+  z-index: 99;
 }
 
 .nav-links {
@@ -126,6 +127,7 @@ nav {
   list-style: none;
   background-color: #8a2be2;
   color: white;
+  z-index: 99;
   clip-path: circle(100px at 100% -25%);
   -webkit-clip-path: circle(100px at 100% -25%);
   -webkit-transition-property: top, left, -webkit-clip-path;
@@ -192,7 +194,6 @@ nav {
 }
 
 .open-menu {
-  opacity: 1;
   clip-path: circle(3000px at 100% 0%);
   -webkit-clip-path: circle(3000px at 100% 0%);
   pointer-events: all;
@@ -311,21 +312,17 @@ nav {
   height: 10px;
 }
 
-.left-logo {
-  width: 25%;
-}
-
-.left-logo img {
-  max-width: 400px;
-  width: 100%;
-}
-
+.left-logo,
 .right-logo {
+  position: relative;
+  top: -1500%;
   width: 25%;
+  z-index: 0;
 }
 
+.left-logo img,
 .right-logo img {
-  max-width: 400px;
+  max-width: 350px;
   width: 100%;
 }
 
@@ -1176,6 +1173,15 @@ div.content-policy {
   .team-content {
     width: 100%;
   }
+  .left-logo,
+  .right-logo {
+    top: -1200%;
+    width: 20%;
+  }
+  .left-logo img,
+  .right-logo img {
+    max-width: 250px;
+  }
 }
 
 @media screen and (max-width: 1000px) {
@@ -1196,29 +1202,18 @@ div.content-policy {
     display: -ms-flexbox;
     display: flex;
   }
-  .left-logo {
-    width: 25%;
-  }
-  .left-logo img {
-    max-height: 400px;
-    width: 100%;
-  }
+  .left-logo,
   .right-logo {
-    width: 25%;
-  }
-  .right-logo img {
-    max-width: 400px;
-    width: 100%;
+    top: -300%;
+    width: 20%;
   }
 }
 
 @media screen and (max-width: 800px) {
-  .logo-container {
-    padding: 0 50px;
-  }
   .logo-container .right-logo,
   .logo-container .left-logo {
-    min-width: 150px;
+    top: 0%;
+    width: 20%;
   }
   .game-content,
   .app-content,
@@ -1248,7 +1243,7 @@ div.content-policy {
   }
   .logo-container .right-logo,
   .logo-container .left-logo {
-    min-width: 100px;
+    width: 20%;
   }
   form.account-form {
     padding: 50px 10px;
