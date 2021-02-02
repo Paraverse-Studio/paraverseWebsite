@@ -10,7 +10,7 @@ nav {
   justify-content: space-around;
   margin: auto;
   padding: 10px;
-  box-shadow: 0.5px 0.5px 2px rgb(104, 104, 104),
+  box-shadow: 0.5px 0.5px 1px rgb(104, 104, 104),
     -0.5px -0.5px 2px rgb(104, 104, 104);
   list-style: none;
 }
@@ -36,8 +36,7 @@ nav {
   flex-direction: column;
   justify-content: space-between;
   height: 22.5px;
-  margin: auto 0;
-  padding: 0 10px;
+  margin: auto 20px;
   cursor: pointer;
   z-index: 100;
 }
@@ -66,11 +65,13 @@ nav {
   }
   li {
     margin: auto;
+    text-align: center;
     font-size: 1.5rem;
     a {
       padding: 20px;
       color: white;
       margin: auto;
+      text-align: left;
     }
   }
   clip-path: circle(100px at 100% -25%);
@@ -103,8 +104,8 @@ nav {
 
 .open-menu {
   opacity: 1;
-  clip-path: circle(100px at 100% 0%);
-  -webkit-clip-path: circle(1500px at 100% 0%);
+  clip-path: circle(3000px at 100% 0%);
+  -webkit-clip-path: circle(3000px at 100% 0%);
   pointer-events: all;
 
   .menu-link {

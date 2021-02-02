@@ -9,7 +9,7 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background: #e2e2e2;
   color: #444;
-  margin: 0 10px;
+  padding: 0 10px;
 }
 
 button {
@@ -65,8 +65,8 @@ nav {
       justify-content: space-around;
   margin: auto;
   padding: 10px;
-  -webkit-box-shadow: 0.5px 0.5px 2px #686868, -0.5px -0.5px 2px #686868;
-          box-shadow: 0.5px 0.5px 2px #686868, -0.5px -0.5px 2px #686868;
+  -webkit-box-shadow: 0.5px 0.5px 1px #686868, -0.5px -0.5px 2px #686868;
+          box-shadow: 0.5px 0.5px 1px #686868, -0.5px -0.5px 2px #686868;
   list-style: none;
 }
 
@@ -98,8 +98,7 @@ nav {
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 22.5px;
-  margin: auto 0;
-  padding: 0 10px;
+  margin: auto 20px;
   cursor: pointer;
   z-index: 100;
 }
@@ -146,6 +145,7 @@ nav {
 
 .nav-menu-window li {
   margin: auto;
+  text-align: center;
   font-size: 1.5rem;
 }
 
@@ -153,6 +153,7 @@ nav {
   padding: 20px;
   color: white;
   margin: auto;
+  text-align: left;
 }
 
 .nav-menu-window .menu-link:nth-of-type(0) {
@@ -192,8 +193,8 @@ nav {
 
 .open-menu {
   opacity: 1;
-  clip-path: circle(100px at 100% 0%);
-  -webkit-clip-path: circle(1500px at 100% 0%);
+  clip-path: circle(3000px at 100% 0%);
+  -webkit-clip-path: circle(3000px at 100% 0%);
   pointer-events: all;
 }
 
@@ -810,18 +811,45 @@ form.account-form .account-button {
 }
 
 footer {
-  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
   padding: 50px 0;
-  white-space: nowrap;
   margin: auto;
-  width: 50%;
-  font-size: 12px;
+  font-size: 0.75rem;
+  text-align: center;
 }
 
-footer li {
-  width: 12%;
-  display: inline-block;
+.footer-links div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.footer-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 0 auto 40px auto;
+  list-style: none;
+}
+
+.footer-links li {
   color: #555;
+  margin: 0 10px;
 }
 
 .message-container {
@@ -905,31 +933,6 @@ footer li {
   font-size: 1rem;
   text-align: center;
   cursor: pointer;
-}
-
-nav ul div.nav-background {
-  background: white;
-  padding: 11px 0px;
-  -webkit-box-shadow: 0px 0px 1px 0px black;
-          box-shadow: 0px 0px 1px 0px black;
-  text-align: center;
-  width: 34%;
-  left: 33%;
-  position: absolute;
-}
-
-nav ul {
-  white-space: nowrap;
-  margin: 0 auto;
-  text-align: center;
-  width: 100%;
-}
-
-nav li {
-  width: 16%;
-  display: inline-block;
-  font-size: 12px;
-  color: #555;
 }
 
 /* 
@@ -1120,9 +1123,6 @@ div.content-policy {
   background-color: #dee9d9;
 }
 
-/* 
-  8) FOOTER ------------------------
-*/
 .hide {
   display: none;
 }
@@ -1206,6 +1206,21 @@ div.content-policy {
   .logo-container .right-logo,
   .logo-container .left-logo {
     min-width: 100px;
+  }
+  form.account-form {
+    padding: 50px 10px;
+  }
+  .footer-links {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .footer-links div {
+    margin: 10px 0;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 /*# sourceMappingURL=styles.css.map */

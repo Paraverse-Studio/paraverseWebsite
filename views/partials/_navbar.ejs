@@ -27,13 +27,13 @@
       <li><a href="/team" class="menu-link">TEAM</a></li>
       <li><a href="/blogs" class="menu-link">BLOG</a></li>
       <% if (user == null || user == undefined) { %>
-        <!-- This div displays when user is NOT logged in -->
-        <li><a href="/account/login" class="menu-link">LOGIN</a></li>
-        <li><a href="/account/register" class="menu-link">REGISTER</a></li>
+      <!-- This div displays when user is NOT logged in -->
+      <li><a href="/account/login" class="menu-link">LOGIN</a></li>
+      <li><a href="/account/register" class="menu-link">REGISTER</a></li>
       <% } else { %>
-        <!-- This div displays when user HAS logged in -->
-        <li><a href="/account" class="menu-link">ACCOUNT</a></li>
-        <li><a href="/account/logout" class="menu-link">LOGOUT</a></li>
+      <!-- This div displays when user HAS logged in -->
+      <li><a href="/account" class="menu-link">ACCOUNT</a></li>
+      <li><a href="/account/logout" class="menu-link">LOGOUT</a></li>
       <% } %>
     </div>
 </nav>
