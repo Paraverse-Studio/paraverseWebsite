@@ -4,7 +4,6 @@
     <li><a href="/apps" class="nav-link">APPS</a></li>
     <li><a href="/team" class="nav-link">TEAM</a></li>
     <li><a href="/blogs" class="nav-link">BLOG</a></li>
-    <li><a href="/play" class="nav-link">PLAY</a></li>
   </ul>
   
   <% if (user == null || user == undefined) { %>
@@ -13,11 +12,32 @@
       <a href="/account/login" class="account-link">Login</a>
       <a href="/account/register" class="account-link">Register</a>
     </div>
-    <% } else { %>
+  <% } else { %>
       <!-- This div displays when user HAS logged in -->
     <div class="logged-in-links">
       <a href="/account" class="account-link">Account</a>
       <a href="/account/logout" class="hyperlink">Logout</a>
     </div>
-    <% } %>
+  <% } %>
+    <div class="menu-btn" id="navMenuBtn">
+      <div class="menu-line"></div>
+      <div class="menu-line"></div>
+      <div class="menu-line"></div>
+    </div>
+    <div class="nav-menu-window">
+      <h2>Paraverse Studio</h2>
+      <li class="menu-link"><a href="/home">Games</a></li>
+      <li class="menu-link"><a href="/apps">Apps</a></li>
+      <li class="menu-link"><a href="/team">Team</a></li>
+      <li class="menu-link"><a href="/blogs">Blog</a></li>
+      <% if (user == null || user == undefined) { %>
+      <!-- This div displays when user is NOT logged in -->
+      <li class="menu-link"><a href="/account/login">Login</a></li>
+      <li class="menu-link"><a href="/account/register">Register</a></li>
+      <% } else { %>
+      <!-- This div displays when user HAS logged in -->
+      <li class="menu-link"><a href="/account">Account</a></li>
+      <li class="menu-link"><a href="/account/logout">Logout</a></li>
+      <% } %>
+    </div>
 </nav>

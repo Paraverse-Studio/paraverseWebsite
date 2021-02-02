@@ -63,6 +63,22 @@ button {
   }
 }
 
+@media screen and (max-width: 1000px) {
+  nav {
+    width: 100%;
+    position: fixed;
+    justify-content: flex-end;
+  }
+  .nav-links,
+  .account-link,
+  .hyperlink {
+    display: none;
+  }
+  .menu-btn {
+    display: flex;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .game-content,
   .app-content,

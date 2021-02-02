@@ -50,7 +50,6 @@ nav {
   display: -ms-flexbox;
   display: flex;
   height: var(--navHeight);
-  padding: 5px;
 }
 
 .nav-links {
@@ -126,6 +125,155 @@ nav {
   cursor: pointer;
 }
 
+.menu-btn {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 22.5px;
+  margin: auto 0;
+  padding: 0 10px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.menu-line {
+  width: 30px;
+  height: 5px;
+  background-color: black;
+}
+
+.nav-menu-window {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  list-style: none;
+  background-color: #8a2be2;
+  color: white;
+  clip-path: circle(100px at 100% -15%);
+  -webkit-clip-path: circle(100px at 100% -15%);
+  -webkit-transition-property: top, left, -webkit-clip-path;
+  transition-property: top, left, -webkit-clip-path;
+  transition-property: top, left, clip-path;
+  transition-property: top, left, clip-path, -webkit-clip-path;
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
+  pointer-events: none;
+}
+
+.nav-menu-window h2 {
+  text-align: center;
+  font-size: 3rem;
+  padding: 10px;
+}
+
+.nav-menu-window li {
+  margin: auto;
+  font-size: 1.5rem;
+}
+
+.nav-menu-window li a {
+  padding: 20px;
+  color: white;
+}
+
+.nav-menu-window .menu-link:nth-of-type(0) {
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
+}
+
+.nav-menu-window .menu-link:nth-of-type(1) {
+  -webkit-animation-delay: 50ms;
+          animation-delay: 50ms;
+}
+
+.nav-menu-window .menu-link:nth-of-type(2) {
+  -webkit-animation-delay: 100ms;
+          animation-delay: 100ms;
+}
+
+.nav-menu-window .menu-link:nth-of-type(3) {
+  -webkit-animation-delay: 150ms;
+          animation-delay: 150ms;
+}
+
+.nav-menu-window .menu-link:nth-of-type(4) {
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms;
+}
+
+.nav-menu-window .menu-link:nth-of-type(5) {
+  -webkit-animation-delay: 250ms;
+          animation-delay: 250ms;
+}
+
+.nav-menu-window .menu-link:nth-of-type(6) {
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
+}
+
+.open-menu {
+  opacity: 1;
+  clip-path: circle(100px at 100% 0%);
+  -webkit-clip-path: circle(1500px at 100% 0%);
+  pointer-events: all;
+}
+
+.open-menu .menu-link {
+  -webkit-animation: FadeIn 1s linear;
+          animation: FadeIn 1s linear;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes FadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.1);
+            transform: scale(0.1);
+  }
+  85% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.1);
+            transform: scale(0.1);
+  }
+  85% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
 .home-page {
   width: 100%;
 }
@@ -165,7 +313,7 @@ nav {
 .game-description {
   max-width: 800px;
   width: 100%;
-  padding: 10px;
+  padding: 10px 20px;
   line-height: 1.4rem;
 }
 
@@ -221,7 +369,7 @@ nav {
 .app-description {
   max-width: 800px;
   width: 100%;
-  padding: 10px;
+  padding: 10px 20px;
   line-height: 1.4rem;
 }
 
@@ -277,7 +425,7 @@ nav {
 .team-description {
   max-width: 800px;
   width: 100%;
-  padding: 10px;
+  padding: 10px 20px;
   line-height: 1.4rem;
 }
 
@@ -439,6 +587,11 @@ form.account-form .account-button {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+}
+
+.blog-page {
+  width: 100%;
+  background-color: #bae8eb;
 }
 
 .blogs-section {
@@ -699,12 +852,13 @@ footer li {
   border-radius: var(--borderRadius);
   margin: 5px 0;
   background-color: lightcoral;
-  text-align: left;
+  text-align: center;
   list-style: none;
 }
 
 .message-text {
   width: 350px;
+  text-align: center;
 }
 
 .error-button {
@@ -734,7 +888,7 @@ footer li {
   border-radius: var(--borderRadius);
   margin: 5px 0;
   background-color: lightgreen;
-  text-align: left;
+  text-align: center;
   list-style: none;
 }
 
@@ -911,6 +1065,26 @@ div.content {
   .app-content,
   .team-content {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  nav {
+    width: 100%;
+    position: fixed;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .nav-links,
+  .account-link,
+  .hyperlink {
+    display: none;
+  }
+  .menu-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 

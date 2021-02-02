@@ -68,9 +68,6 @@ app.get('/apps', (req, res) => {
 app.get('/team', (req, res) => {
   res.render('team', { user: req.user });
 });
-app.get('/play', (req, res) => {
-  res.render('play', { user: req.user });
-});
 app.get('/contact', (req, res) => {
   res.render('contact', { user: req.user });
 });
