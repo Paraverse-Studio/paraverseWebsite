@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Paraverse Studio</title>
   <%- include('./partials/_head.ejs') %>
 </head>
@@ -10,75 +11,78 @@
   <!-- TOP NAVIGATION BAR -->
   <%- include('./partials/_navbar.ejs') %>
   <!-- IMAGES FOR HEADER -->
+  <section class="logo-container">
+    <div class="left-logo">
+      <img src="images/colossal-background.png">
+    </div>
+    <div class="right-logo">
+        <img src="images/colossal-background2.png">
+    </div>
+  </section>
   <br><br><br><br>
   <!-- HEADER -->
   <div class="welcome">
     <h2>Paraverse Studio is an indie developer studio</h2><br>
     <section>We want to develop games that challenge and intice you</section><br>
     <hr class="welcome">
-    <section class="logo-container">
-      <div class="left-logo">
-        <img src="images/colossal-background.png">
-      </div>
-      <div class="right-logo">
-          <img src="images/colossal-background2.png">
-      </div>
-    </section>
     <div class="transition-heading" id="transition-head"><strong>Our games</strong></div>
   </div>
   <!-- MAIN CONTENT -->
-  <main class="home-page">
-    <!-- colossal saga -->
-    <section class="game-container" id="colossalSaga">
-      <div class="game-content">
-        <div class="game-display">
-          <iframe width="444" height="250" src="https://www.youtube.com/embed/hUDbOJm2CB4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="game-description">
-          <h2>Colossal Saga</h2><br>
-          <strong>Colossal Saga</strong> is a local multiplayer (1 to 4 players) action-fighting game with unique, dynamic characters available to play on several well-known classic game modes.
-          The skill-based mechanics-driven combat is easy to pick up for a group of friends trying the game for the first time, and difficult to master, greatly rewarding players with experience and practice.
-          <hr>
-          <div class="game-link">
-            <a href="https://store.steampowered.com/app/1181820/Colossal_Saga/">Steam</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  <!-- ozone guardian -->
-    <section class="game-container" id="ozoneGuardian">
-      <div class="game-content">
-        <div class="game-display">
-          <iframe width="444" height="250" src="https://www.youtube.com/embed/aaUejtNiAno" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="game-description">
-          <h2>Ozone Guardian</h2><br>
-          A new twist on the classic arcade shooter, with a variety of character choices and an upgrade system. Control your spaceship with your mouse & shoot with click - the only limitation is your hand speed! Face waves of creative enemy ships and stimulating bosses, and protect the ozone, <strong>Ozone Guardian</strong>.
-          <hr>
-          <div class="game-link">
-            <a href="https://store.steampowered.com/app/1432400/Ozone_Guardian/">Steam</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- tower defence 3d -->
-      <div class="game-container" id="towerDefence">
+  <div class="container">
+    <main class="home-page">
+      <!-- colossal saga -->
+      <section class="game-container" id="colossalSaga">
         <div class="game-content">
           <div class="game-display">
-            <img width="444" height="250" src="../images/tower-defense-3d-icon.png" alt="tower defense 3d game">
+            <iframe width="444" height="250" src="https://www.youtube.com/embed/hUDbOJm2CB4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <div class="game-description">
-            <h2>Tower Defence 3D - Enemy Wave</h2><br>
-            A strategic 3D tower defence game with various enemies, each of which have unique stats. With limited build slots, players will be tested in their strategic ability as they combat the approaching waves of enemy. As players progress through levels, shop with in-game currencies for tower upgrades and special items that can assist in completing difficult levels.   
+            <h2>Colossal Saga</h2><br>
+            <strong>Colossal Saga</strong> is a local multiplayer (1 to 4 players) action-fighting game with unique, dynamic characters available to play on several well-known classic game modes.
+            The skill-based mechanics-driven combat is easy to pick up for a group of friends trying the game for the first time, and difficult to master, greatly rewarding players with experience and practice.
             <hr>
             <div class="game-link">
-              <a href="http://prabdhaliwal.com/game">Play Now</a>
+              <a href="https://store.steampowered.com/app/1181820/Colossal_Saga/">Steam</a>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    <!-- ozone guardian -->
+      <section class="game-container" id="ozoneGuardian">
+        <div class="game-content">
+          <div class="game-display">
+            <iframe width="444" height="250" src="https://www.youtube.com/embed/aaUejtNiAno" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="game-description">
+            <h2>Ozone Guardian</h2><br>
+            A new twist on the classic arcade shooter, with a variety of character choices and an upgrade system. Control your spaceship with your mouse & shoot with click - the only limitation is your hand speed! Face waves of creative enemy ships and stimulating bosses, and protect the ozone, <strong>Ozone Guardian</strong>.
+            <hr>
+            <div class="game-link">
+              <a href="https://store.steampowered.com/app/1432400/Ozone_Guardian/">Steam</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- tower defence 3d -->
+        <div class="game-container" id="towerDefence">
+          <div class="game-content">
+            <div class="game-display">
+              <img width="444" height="250" src="../images/tower-defense-3d-icon.png" alt="tower defense 3d game">
+            </div>
+            <div class="game-description">
+              <h2>Tower Defence 3D - Enemy Wave</h2><br>
+              A strategic 3D tower defence game with various enemies, each of which have unique stats. With limited build slots, players will be tested in their strategic ability as they combat the approaching waves of enemy. As players progress through levels, shop with in-game currencies for tower upgrades and special items that can assist in completing difficult levels.   
+              <hr>
+              <div class="game-link">
+                <a href="https://www.prabdhaliwal.com/game">Play Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <br><br><br><br><br>
+    </main>
+  </div>
   <!-- FOOTER -->
   <%- include('./partials/_footer.ejs') %>
 

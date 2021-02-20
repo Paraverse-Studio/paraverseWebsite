@@ -14,25 +14,26 @@
         <li><a href="/account/logout" class="nav-link">LOGOUT</a></li>
     <% } %>
   </ul>
-  <!-- Responsive menu bar for when width is <= to 1100px -->
-  <div class="menu-btn" id="navMenuBtn">
-    <div class="menu-line"></div>
-    <div class="menu-line"></div>
-    <div class="menu-line"></div>
-  </div>
-  <div class="nav-menu-window">
-    <li><a href="/home" class="menu-link">GAMES</a></li>
-    <li><a href="/apps" class="menu-link">APPS</a></li>
-    <li><a href="/team" class="menu-link">TEAM</a></li>
-    <li><a href="/blogs" class="menu-link">BLOG</a></li>
-    <% if (user == null || user == undefined) { %>
-    <!-- This div displays when user is NOT logged in -->
-    <li><a href="/account/login" class="menu-link">LOGIN</a></li>
-    <li><a href="/account/register" class="menu-link">REGISTER</a></li>
-    <% } else { %>
-    <!-- This div displays when user HAS logged in -->
-    <li><a href="/account" class="menu-link">ACCOUNT</a></li>
-    <li><a href="/account/logout" class="menu-link">LOGOUT</a></li>
-    <% } %>
-  </div>
+  
+  
+    <div class="menu-btn" id="navMenuBtn">
+      <div class="menu-line"></div>
+      <div class="menu-line"></div>
+      <div class="menu-line"></div>
+    </div>
+    <div class="nav-menu-window">
+      <li><a href="/home" class="menu-link">GAMES</a></li>
+      <li><a href="/apps" class="menu-link">APPS</a></li>
+      <li><a href="/team" class="menu-link">TEAM</a></li>
+      <li><a href="/blogs" class="menu-link">BLOG</a></li>
+      <% if (user == null || user == undefined) { %>
+        <!-- This div displays when user is NOT logged in -->
+        <li><a href="/account/login" class="menu-link">LOGIN</a></li>
+        <li><a href="/account/register" class="menu-link">REGISTER</a></li>
+      <% } else { %>
+        <!-- This div displays when user HAS logged in -->
+        <li><a href="/account" class="menu-link">ACCOUNT</a></li>
+        <li><a href="/account/logout" class="menu-link">LOGOUT</a></li>
+      <% } %>
+    </div>
 </nav>

@@ -8,7 +8,7 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background: #e2e2e2;
   color: #444;
-  padding: 0 10px;
+  margin: 0 10px;
 }
 
 button {
@@ -50,7 +50,6 @@ button {
 @import 'Team';
 @import 'Account';
 @import 'Blog';
-@import 'Contact';
 @import 'Footer';
 @import 'Misc';
 @import 'Temp';
@@ -64,14 +63,6 @@ button {
   .app-content,
   .team-content {
     width: 100%;
-  }
-  .left-logo,
-  .right-logo {
-    top: -1200%;
-    width: 20%;
-    img {
-      max-width: 250px;
-    }
   }
 }
 
@@ -90,19 +81,28 @@ button {
     display: flex;
   }
 
-  .left-logo,
+  .left-logo {
+    width: 25%;
+    img {
+      max-height: 400px;
+      width: 100%;
+    }
+  }
   .right-logo {
-    top: -300%;
-    width: 20%;
+    width: 25%;
+    img {
+      max-width: 400px;
+      width: 100%;
+    }
   }
 }
 
 @media screen and (max-width: 800px) {
   .logo-container {
+    padding: 0 50px;
     .right-logo,
     .left-logo {
-      top: 0%;
-      width: 20%;
+      min-width: 150px;
     }
   }
   .game-content,
@@ -124,17 +124,7 @@ button {
     padding: 0 10px;
     .right-logo,
     .left-logo {
-      width: 20%;
-    }
-  }
-  form.account-form {
-    padding: 50px 10px;
-  }
-  .footer-links {
-    flex-direction: column;
-    div {
-      margin: 10px 0;
-      justify-content: space-between;
+      min-width: 100px;
     }
   }
 }

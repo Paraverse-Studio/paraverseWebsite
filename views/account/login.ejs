@@ -8,25 +8,33 @@
   <body>
     <!-- TOP NAVIGATION BAR -->
     <%- include('../partials/_navbar.ejs') %>
-    <br><br><br><br><br>
-      <!-- HEADER -->
-      <div class="welcome">
-        <h2 class="page-title">Paraverse Login</h2>
-        <section>Admin login only.</section><br>
-        <hr class="welcome">
-        <div class="transition-heading" id="transition-head"><strong>Login</strong></div>
-      </div>
+    <br><br><br><br>
     <!-- HEADER -->
-    <section class="account-section">
-      <form class="account-form" method="POST" action="/account/login">
-        <%- include('../partials/messages.ejs')%>
-        <label>Username</label>
-        <input type="text" name="username" id="username" placeholder="username" />
-        <label>Password</label>
-        <input type="password" name="password" id="password" placeholder="password" />
-        <button class="btn account-button" type="submit">Login</button>
-      </form>
-    </section>
+    
+    <div class="welcome">
+      <h2>Login</h2>
+      <section>Enter your credentials below to login</section><br>
+      <hr class="welcome">
+    </div>
+    <!-- MAIN CONTENT -->
+    <div class="container" id="containerLogin">
+      <section class="account-section">
+        <!-- <h2 class="page-title">Login</h2> -->
+        <form class="account-form" method="POST" action="/account/login">
+          <%- include('../partials/messages.ejs')%>
+          <label>Username</label>
+          <input type="text" name="username" id="username" placeholder="username" />
+          <label>Password</label>
+          <input type="password" name="password" id="password" placeholder="password" />
+          <button class="btn account-button" type="submit">Login</button>
+        </form>
+        <br><br><br>
+        <a href="/account/register" class="btn-register">Forgot Password?</a>
+        <br><br>
+        <a href="/account/register" class="btn-register">Create Account</a>
+      </section>
+      <br><br>
+    </div>
     <!-- FOOTER  -->
     <%- include('../partials/_footer.ejs') %>
 

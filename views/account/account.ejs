@@ -13,7 +13,7 @@
         <h2 class="page-title">Account</h2>
         <section>Access all your account and profile details here.</section><br>
         <hr class="welcome"><br>
-      </div>
+      
 
       <main class="account-section">
         <h3>Welcome, <%= user.firstName %> <%= user.lastName %></h3>
@@ -44,6 +44,9 @@
           </div>
         </section>
       </main>
+      <a href="/account/logout" class="btn-logout">Logout</a>
+            <br><br>
+    </div>
       <!-- FOOTER  -->
       <%- include('../partials/_footer.ejs') %>
       

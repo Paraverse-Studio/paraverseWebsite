@@ -54,14 +54,17 @@
   height: 10px;
 }
 
-.left-logo,
-.right-logo {
-  position: relative;
-  top: -1500%;
+.left-logo {
   width: 25%;
-  z-index: 0;
   img {
-    max-width: 350px;
+    max-width: 400px;
+    width: 100%;
+  }
+}
+.right-logo {
+  width: 25%;
+  img {
+    max-width: 400px;
     width: 100%;
   }
 }
