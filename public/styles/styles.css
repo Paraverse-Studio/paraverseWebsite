@@ -53,6 +53,7 @@ nav {
   display: -ms-flexbox;
   display: flex;
   height: var(--navHeight);
+  z-index: 99;
 }
 
 .nav-links {
@@ -65,8 +66,8 @@ nav {
       justify-content: space-around;
   margin: auto;
   padding: 10px;
-  /* -webkit-box-shadow: 0.5px 0.5px 2px #686868, -0.5px -0.5px 2px #686868;
-          box-shadow: 0.5px 0.5px 2px #686868, -0.5px -0.5px 2px #686868; */
+  -webkit-box-shadow: 0.5px 0.5px 2px #686868, -0.5px -0.5px 2px #686868;
+          box-shadow: 0.5px 0.5px 2px #686868, -0.5px -0.5px 2px #686868;
   list-style: none;
 }
 
@@ -75,6 +76,13 @@ nav {
   display: -ms-flexbox;
   display: flex;
   margin: auto 0;
+}
+
+nav ul li {
+  width: 16%;
+  display: inline-block;
+  font-size: 12px;
+  color: #555;
 }
 
 .nav-link {
@@ -98,7 +106,7 @@ nav {
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 22.5px;
-  margin: auto 0;
+  margin: auto 20px;
   padding: 0 10px;
   cursor: pointer;
   z-index: 100;
@@ -127,6 +135,7 @@ nav {
   list-style: none;
   background-color: #8a2be2;
   color: white;
+  z-index: 99;
   clip-path: circle(100px at 100% -25%);
   -webkit-clip-path: circle(100px at 100% -25%);
   -webkit-transition-property: top, left, -webkit-clip-path;
@@ -192,8 +201,8 @@ nav {
 
 .open-menu {
   opacity: 1;
-  clip-path: circle(100px at 100% 0%);
-  -webkit-clip-path: circle(1500px at 100% 0%);
+  clip-path: circle(3000px at 100% 0%);
+  -webkit-clip-path: circle(3000px at 100% 0%);
   pointer-events: all;
 }
 
@@ -452,12 +461,11 @@ nav {
 .account-section {
   margin: auto;
   text-align: center;
-  padding-top: 25px;
-  padding-bottom: 75px;
+  padding: 50px 0;
 }
 
 form.account-form {
-  max-width: 550px;
+  max-width: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -465,9 +473,9 @@ form.account-form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 0px auto;
-  /* padding: 50px; */
-  /* border: 2px solid var(--primaryColor); */
+  margin: 20px auto;
+  padding: 50px;
+  border: 2px solid var(--primaryColor);
 }
 
 form.account-form label {
@@ -481,19 +489,18 @@ form.account-form input {
   padding: 10px;
   border-bottom: 1px solid var(--primaryColor);
   background-color: #eee;
-  cursor: text;
+  cursor: pointer;
 }
 
 form.account-form input[type='text'],
 form.account-form input[type='password'],
-form.account-form input[type='placeholder'],
-form.account-form input[type='email'] {
+form.account-form input[type='placeholder'] {
   font-size: 1rem;
 }
 
-/* form.account-form input:hover, */
+form.account-form input:hover,
 form.account-form input:focus {
-  /* border-bottom: 2px solid var(--primaryColor); */
+  border-bottom: 2px solid var(--primaryColor);
   opacity: 0.8;
 }
 
@@ -506,7 +513,7 @@ form.account-form .account-button {
   padding: var(--smallBtnPadding);
   background-color: var(--purpleColor);
   color: white;
-  /* cursor: pointer; */
+  cursor: pointer;
 }
 
 .user-profile {
@@ -636,7 +643,7 @@ form.account-form .account-button {
   font-size: var(--largeFont);
   color: #49b3f5;
   text-decoration: none;
-  /* cursor: pointer; */
+  cursor: pointer;
 }
 
 .blog-date-text {
@@ -694,9 +701,9 @@ form.account-form .account-button {
   outline: 0;
   padding: 10px;
   background-color: #eee;
-  /* border: 1px solid black; */
+  border: 1px solid black;
   margin: 10px 0;
-  cursor: text;
+  cursor: pointer;
 }
 
 .blog-form textarea {
@@ -705,7 +712,7 @@ form.account-form .account-button {
   padding: 10px;
   background-color: #eee;
   margin: 10px 0;
-  cursor: text;
+  cursor: pointer;
 }
 
 .blog-form textarea:first-of-type {
@@ -718,25 +725,23 @@ form.account-form .account-button {
 
 .blog-form input[type='text'],
 .blog-form input[type='password'],
-.blog-form input[type='placeholder'],
-.blog-form input[type='email'] {
+.blog-form input[type='placeholder'] {
   font-size: 1rem;
 }
 
 .blog-form textarea[type='text'],
 .blog-form textarea[type='password'],
-.blog-form textarea[type='placeholder'],
-.blog-form textarea[type='email'] {
+.blog-form textarea[type='placeholder'] {
   font-size: 1rem;
 }
 
-/* .blog-form input:hover, */
+.blog-form input:hover,
 .blog-form input:focus {
   -webkit-box-shadow: 1px 1px 3px inset var(--purpleColor), -1px -1px 3px inset var(--purpleColor);
           box-shadow: 1px 1px 3px inset var(--purpleColor), -1px -1px 3px inset var(--purpleColor);
 }
 
-/* .blog-form textarea:hover, */
+.blog-form textarea:hover,
 .blog-form textarea:focus {
   -webkit-box-shadow: 1px 1px 3px inset var(--purpleColor), -1px -1px 3px inset var(--purpleColor);
           box-shadow: 1px 1px 3px inset var(--purpleColor), -1px -1px 3px inset var(--purpleColor);
@@ -755,7 +760,7 @@ form.account-form .account-button {
 .blog-form .form-button {
   margin-top: 40px;
   padding: var(--smallBtnPadding);
-  cursor: text;
+  cursor: pointer;
 }
 
 .article-title {
@@ -826,10 +831,6 @@ footer li {
   width: 12%;
   display: inline-block;
   color: #555;
-}
-
-footer p {
-  padding: 20px;
 }
 
 .message-container {
@@ -926,20 +927,6 @@ nav ul div.nav-background {
   position: absolute;
 }
 
-nav ul {
-  white-space: nowrap;
-  margin: 0 auto;
-  text-align: center;
-  width: 100%;
-}
-
-nav li {
-  width: 16%;
-  display: inline-block;
-  font-size: 12px;
-  color: #555;
-}
-
 /* 
   2) HEADER ------------------------
 */
@@ -1001,10 +988,6 @@ a.website {
 
 a.github {
   color: #ad33ff;
-}
-
-a.btn-logout{
-  color: rgb(228, 107, 107);
 }
 
 a:link {
